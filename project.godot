@@ -13,9 +13,17 @@ config_version=5
 config/name="Practice Twinstick"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+InputDetector="*uid://c2qsh6370ql0"
+
 [dotnet]
 
 project/assembly_name="Practice Twinstick"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/commons/plugin.cfg")
 
 [physics]
 
