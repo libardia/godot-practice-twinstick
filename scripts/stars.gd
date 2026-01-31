@@ -6,7 +6,7 @@ extends Node2D
 @export_custom(PROPERTY_HINT_NONE, "suffix:%") var min_scale := 0.25
 @export_custom(PROPERTY_HINT_NONE, "suffix:%") var max_scale := 0.75
 @export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:px") var chunk_size := 1024.0
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:chunks") var deload_distance := 5.0
+@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:chunks") var deload_distance := 10.0
 @export var star_density := 40
 
 var rng = RandomNumberGenerator.new()
@@ -16,8 +16,8 @@ var chunks: Dictionary[Vector2i, StarChunk] = {}
 
 func _process(_delta: float) -> void:
     var cam = get_viewport().get_camera_2d()
-    var inv_xform = cam.get_canvas_transform().affine_inverse()
-    seen_rect = inv_xform * get_viewport_rect()
+    seen_rect = get_viewport_rect()
+    seen_rect.position = cam.global_position - (seen_rect.size / 2.0)
 
     var seen_chunks = Rect2i(floor(seen_rect.position / chunk_size), ceil(seen_rect.size / chunk_size) + Vector2.ONE)
     var seen_center = seen_rect.get_center() / chunk_size
