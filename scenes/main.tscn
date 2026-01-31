@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3kqivgtew5f1"]
+
+[ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/stars.gd" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=1026637475]
+
+[node name="Stars" type="Node2D" parent="." unique_id=441857265]
+script = ExtResource("1_o5qli")
+stars = Array[Texture2D]([null])
+metadata/_custom_type_script = "uid://davqcsxn32c3l"

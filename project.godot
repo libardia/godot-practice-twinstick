@@ -32,3 +32,4 @@ enabled=PackedStringArray("res://addons/commons/plugin.cfg")
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.22745098, 0.18039216, 0.24705882, 1)
