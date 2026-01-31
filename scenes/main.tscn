@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://d3kqivgtew5f1"]
 
 [ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/stars.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
-[node name="Stars" type="Node2D" parent="." unique_id=441857265]
+[node name="Stars" type="Node2D" parent="." unique_id=1312143591]
+modulate = Color(0.39308578, 0.39308542, 0.39308548, 0.8627451)
 script = ExtResource("1_o5qli")
-stars = Array[Texture2D]([null])
+stars = Array[Texture2D]([ExtResource("2_sugp2"), ExtResource("3_jyhfs"), ExtResource("4_jyhfs")])
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1303595021]
+limit_enabled = false
