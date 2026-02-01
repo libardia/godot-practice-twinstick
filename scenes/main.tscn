@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
@@ -13,5 +14,4 @@ script = ExtResource("1_o5qli")
 stars = Array[Texture2D]([ExtResource("2_sugp2"), ExtResource("3_jyhfs"), ExtResource("4_jyhfs")])
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1303595021]
-limit_enabled = false
+[node name="Player" parent="." unique_id=1861245870 instance=ExtResource("5_tbgi4")]

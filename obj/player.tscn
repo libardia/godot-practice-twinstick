@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c7mxj5wcu4oi7"]
+
+[ext_resource type="Script" uid="uid://gj8mg7vh8en6" path="res://scripts/player.gd" id="1_g3svd"]
+[ext_resource type="Texture2D" uid="uid://b2pdnj2jjdrgw" path="res://assets/img/player-ship/playerShip1_red.png" id="1_x4w5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3svd"]
+size = Vector2(27.37, 98.96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfbe"]
+size = Vector2(27.835, 22.415)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xnc2w"]
+radius = 27.0
+
+[node name="Player" type="CharacterBody2D" unique_id=123542603]
+motion_mode = 1
+script = ExtResource("1_g3svd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=479960213]
+limit_enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1852417925]
+position = Vector2(11, 0)
+rotation = 1.5707964
+texture = ExtResource("1_x4w5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440302441]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_g3svd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1770376005]
+position = Vector2(33.9175, 0)
+shape = SubResource("RectangleShape2D_rhfbe")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1470611687]
+shape = SubResource("CircleShape2D_xnc2w")
