@@ -2,12 +2,12 @@ class_name Player
 extends CharacterBody2D
 
 
-@export_category("Movement")
+@export_group("Movement")
 @export var max_speed: float = 750
 @export var drag_coeff: float = 0.3
 @export var mass: float = 10
 
-@export_category("Rotation")
+@export_group("Rotation")
 @export var rotation_lerp_factor: float = 15
 
 @onready var camera: Camera2D = $Camera2D
@@ -17,6 +17,7 @@ var target_angle: float
 
 
 func _ready() -> void:
+    # Calculated to ensure max speed
     move_force = max_speed * drag_coeff
 
 
