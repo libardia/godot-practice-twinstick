@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://d3kqivgtew5f1"]
 
+[ext_resource type="Script" uid="uid://6q2pvfruvvdc" path="res://scripts/set_cursor.gd" id="1_a8y0u"]
 [ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/stars.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://nrr7mev17r0" path="res://assets/img/ui/crosshair_d.png" id="2_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
+
+[node name="SetCursor" type="Node" parent="." unique_id=375166096]
+script = ExtResource("1_a8y0u")
+cursor = ExtResource("2_o6xl0")
+hotspot = Vector2(14, 14)
+controller_cursor_mode = 1
 
 [node name="Player" parent="." unique_id=1861245870 instance=ExtResource("5_tbgi4")]
 z_index = 1
@@ -20,5 +28,4 @@ scroll_scale = Vector2(0.2, 0.2)
 script = ExtResource("1_o5qli")
 stars_textures = Array[Texture2D]([ExtResource("2_sugp2"), ExtResource("3_jyhfs"), ExtResource("4_jyhfs")])
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
-debug = true
 metadata/_custom_type_script = "uid://davqcsxn32c3l"

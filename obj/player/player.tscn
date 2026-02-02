@@ -15,7 +15,6 @@ radius = 25.8
 
 [node name="Player" type="CharacterBody2D" unique_id=681213816]
 script = ExtResource("1_g3svd")
-bullet_include_velocity = false
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
 process_callback = 0

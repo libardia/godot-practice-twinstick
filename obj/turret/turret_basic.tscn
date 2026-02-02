@@ -7,7 +7,7 @@
 [node name="TurretBasic" type="Node2D" unique_id=1943116017]
 script = ExtResource("1_0webi")
 bullet_scene = ExtResource("4_nvrhd")
-bullet_speed = 1000.0
+bullet_speed = 2000.0
 smooth_aim = false
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=1125298590]
