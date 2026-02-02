@@ -12,9 +12,13 @@ extends Node2D
 @export var aim_ease_factor: float = 0.2
 
 @onready var gun: Node2D = $Gun
-@onready var fire_position: Marker2D = $Gun/FirePosition
+@onready var fire_points: Array[Marker2D]
 
 var target_angle: float
+
+
+func _ready() -> void:
+    fire_points.assign($Gun/FirePoints.get_children())
 
 
 func aim(direction: Vector2):
@@ -25,9 +29,10 @@ func aim(direction: Vector2):
 
 
 func fire(extra_velocity: Vector2 = Vector2.ZERO):
-    var fire_xform = fire_position.global_transform
-    var bullet_vel = extra_velocity + fire_xform.x * bullet_speed
-    BulletManager.fire(bullet_scene, fire_xform, bullet_vel, NodeUtil.absolute_z(fire_position))
+    for point in fire_points:
+        var fire_xform = point.global_transform
+        var bullet_vel = extra_velocity + fire_xform.x * bullet_speed
+        BulletManager.fire(bullet_scene, fire_xform, bullet_vel, NodeUtil.absolute_z(point))
 
 
 func _process(delta: float) -> void:

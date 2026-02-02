@@ -5,11 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="5_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://d0x5j7vdyl5mt" path="res://assets/img/player-ship/playerShip3_blue.png" id="6_choun"]
-[ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/player-ship/playerShip3_orange.png" id="7_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/player-ship/playerShip2_orange.png" id="8_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://djx884mryyacp" path="res://assets/img/player-ship/playerShip2_blue.png" id="9_trceg"]
-[ext_resource type="Texture2D" uid="uid://b2p5ulcgybuda" path="res://assets/img/player-ship/playerShip1_blue.png" id="10_a8y0u"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
@@ -26,23 +21,3 @@ stars_textures = Array[Texture2D]([ExtResource("2_sugp2"), ExtResource("3_jyhfs"
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
 debug = true
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
-
-[node name="PlayerShip3Blue" type="Sprite2D" parent="." unique_id=941878278]
-position = Vector2(-491, 200)
-texture = ExtResource("6_choun")
-
-[node name="PlayerShip3Orange" type="Sprite2D" parent="." unique_id=1166295011]
-position = Vector2(504, -108)
-texture = ExtResource("7_ya4ey")
-
-[node name="PlayerShip2Orange" type="Sprite2D" parent="." unique_id=929973149]
-position = Vector2(236, -241)
-texture = ExtResource("8_eb6dy")
-
-[node name="PlayerShip2Blue" type="Sprite2D" parent="." unique_id=1562902154]
-position = Vector2(-322, -193)
-texture = ExtResource("9_trceg")
-
-[node name="PlayerShip1Blue" type="Sprite2D" parent="." unique_id=1380945657]
-position = Vector2(-225, -4)
-texture = ExtResource("10_a8y0u")

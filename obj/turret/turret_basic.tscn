@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cgo4qtqd6e4e6"]
 
 [ext_resource type="Script" uid="uid://cyed1okohu4lh" path="res://obj/turret/turret.gd" id="1_0webi"]
-[ext_resource type="Texture2D" uid="uid://bt8ml0lbvvlgx" path="res://assets/img/turret/turretBase_small.png" id="1_t886t"]
 [ext_resource type="Texture2D" uid="uid://cgftmu1xfh2ij" path="res://assets/img/turret/gun06.png" id="2_ftgyb"]
 [ext_resource type="PackedScene" uid="uid://c3jpn5qdcaode" path="res://obj/bullet/bullet.tscn" id="4_nvrhd"]
 
@@ -12,18 +11,17 @@ bullet_speed = 1000.0
 smooth_aim = false
 
 [node name="TurretBaseSmall" type="Sprite2D" parent="." unique_id=1125298590]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_t886t")
 
 [node name="Gun" type="Node2D" parent="." unique_id=1884350004]
 z_index = 2
 
 [node name="Gun06" type="Sprite2D" parent="Gun" unique_id=2099463501]
-position = Vector2(5, 0)
+position = Vector2(9, 0)
 rotation = -1.5707964
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ftgyb")
 
-[node name="FirePosition" type="Marker2D" parent="Gun" unique_id=764586990]
+[node name="FirePoints" type="Node2D" parent="Gun" unique_id=1228138151]
+
+[node name="FirePosition" type="Marker2D" parent="Gun/FirePoints" unique_id=764586990]
 z_index = -1
-position = Vector2(9, 0)
+position = Vector2(20, 0)
