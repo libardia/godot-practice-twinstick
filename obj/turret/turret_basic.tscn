@@ -10,12 +10,12 @@ bullet_scene = ExtResource("4_nvrhd")
 bullet_speed = 1000.0
 smooth_aim = false
 
-[node name="TurretBaseSmall" type="Sprite2D" parent="." unique_id=1125298590]
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=1125298590]
 
 [node name="Gun" type="Node2D" parent="." unique_id=1884350004]
 z_index = 2
 
-[node name="Gun06" type="Sprite2D" parent="Gun" unique_id=2099463501]
+[node name="GunSprite" type="Sprite2D" parent="Gun" unique_id=2099463501]
 position = Vector2(9, 0)
 rotation = -1.5707964
 texture = ExtResource("2_ftgyb")

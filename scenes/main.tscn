@@ -10,6 +10,7 @@
 
 [node name="Player" parent="." unique_id=1861245870 instance=ExtResource("5_tbgi4")]
 z_index = 1
+rotation = -1.5707964
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747640961]
 z_index = -10
