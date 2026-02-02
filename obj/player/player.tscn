@@ -1,23 +1,28 @@
 [gd_scene format=3 uid="uid://c7mxj5wcu4oi7"]
 
-[ext_resource type="Script" uid="uid://gj8mg7vh8en6" path="res://scripts/player.gd" id="1_g3svd"]
+[ext_resource type="Script" uid="uid://gj8mg7vh8en6" path="res://obj/player/player.gd" id="1_g3svd"]
 [ext_resource type="Texture2D" uid="uid://b2pdnj2jjdrgw" path="res://assets/img/player-ship/playerShip1_red.png" id="1_x4w5f"]
+[ext_resource type="PackedScene" uid="uid://cgo4qtqd6e4e6" path="res://obj/turret/turret_basic.tscn" id="3_rhfbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3svd"]
-size = Vector2(27.37, 98.96)
+size = Vector2(27.45, 94.985)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfbe"]
-size = Vector2(27.835, 22.415)
+size = Vector2(27, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnc2w"]
-radius = 27.0
+radius = 26.65
 
-[node name="Player" type="CharacterBody2D" unique_id=123542603]
-motion_mode = 1
+[node name="Player" type="CharacterBody2D" unique_id=681213816]
 script = ExtResource("1_g3svd")
+bullet_pass_velocity = false
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=479960213]
-limit_enabled = false
+[node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
+process_callback = 0
+wait_time = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2104907668]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
@@ -26,13 +31,21 @@ position = Vector2(11, 0)
 rotation = 1.5707964
 texture = ExtResource("1_x4w5f")
 
+[node name="Turret1" parent="." unique_id=1943116017 instance=ExtResource("3_rhfbe")]
+position = Vector2(11, 24)
+
+[node name="Turret2" parent="." unique_id=660478834 instance=ExtResource("3_rhfbe")]
+position = Vector2(11, -24)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440302441]
-position = Vector2(1, 0)
+position = Vector2(0.24, 0)
 shape = SubResource("RectangleShape2D_g3svd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1770376005]
-position = Vector2(33.9175, 0)
+position = Vector2(34.565, 0)
 shape = SubResource("RectangleShape2D_rhfbe")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1470611687]
 shape = SubResource("CircleShape2D_xnc2w")
+
+[connection signal="timeout" from="FireCooldown" to="." method="fire"]

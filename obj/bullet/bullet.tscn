@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c3jpn5qdcaode"]
+
+[ext_resource type="Texture2D" uid="uid://cgpn02f7bxdmf" path="res://assets/img/bullet/laserBlue01.png" id="1_c4s6q"]
+[ext_resource type="Script" uid="uid://cvsu86mtu4wj" path="res://obj/bullet/bullet.gd" id="1_eb0oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb0oy"]
+size = Vector2(51, 4)
+
+[node name="Bullet" type="Node2D" unique_id=1200226700]
+script = ExtResource("1_eb0oy")
+
+[node name="Lifetime" type="Timer" parent="." unique_id=2007843289]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Group" type="Node2D" parent="." unique_id=575392276]
+position = Vector2(22, 0)
+
+[node name="BulletSprite" type="Sprite2D" parent="Group" unique_id=1032581405]
+rotation = 1.5707964
+texture = ExtResource("1_c4s6q")
+
+[node name="Area2D" type="Area2D" parent="Group" unique_id=1841136345]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Group/Area2D" unique_id=209751782]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_eb0oy")
+
+[connection signal="timeout" from="Lifetime" to="." method="queue_free"]
