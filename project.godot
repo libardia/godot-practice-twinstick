@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+Log/streams/Main=0
+
 [application]
 
 config/name="Practice Twinstick"
@@ -16,11 +20,12 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-InputDetector="*uid://c2qsh6370ql0"
+Log="*uid://dosdhhurn4dxp"
 Settings="*uid://baru1u2vqkfde"
 BulletManager="*uid://cg67t1iw6vgvj"
 NodeUtil="*uid://dnnnkoerexadk"
 DebugQuit="*uid://dfe0sanoxr30"
+InputDetector="*uid://c2qsh6370ql0"
 
 [display]
 
@@ -33,7 +38,7 @@ project/assembly_name="Practice Twinstick"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/commons/plugin.cfg")
+enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/logger/plugin.cfg")
 
 [input]
 
@@ -102,6 +107,9 @@ fire={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=0.0
+2d/default_gravity_vector=Vector2(0, 0)
+2d/default_angular_damp=0.0
 common/physics_interpolation=true
 
 [rendering]

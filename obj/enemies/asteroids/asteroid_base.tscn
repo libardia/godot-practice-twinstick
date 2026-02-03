@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://86tignmrhsg4"]
+
+[ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroids/asteroid.gd" id="1_0ofqo"]
+[ext_resource type="Script" uid="uid://dfliux2w8l2hx" path="res://addons/commons/nodes/extended_collision_polygon_2d.gd" id="2_njbbx"]
+
+[node name="AsteroidBase" type="RigidBody2D" unique_id=1515242791]
+script = ExtResource("1_0ofqo")
+angular_min = 10.0
+angular_max = 10.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
+
+[node name="ExtendedCollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
+script = ExtResource("2_njbbx")
+metadata/_custom_type_script = "uid://dfliux2w8l2hx"

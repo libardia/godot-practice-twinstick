@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export_group("Rotation", "rotation_")
 @export var rotation_lerp_factor: float = 3
 @export var rotation_ease_factor: float = 0.5
+@export var rotation_aim_by_rotation: bool = false
 
 @export_group("Bullets", "bullet_")
 @export var bullet_include_velocity: bool = true
@@ -45,20 +46,26 @@ func _physics_process(_delta: float) -> void:
     else:
         aim_dir = Input.get_vector(&"aim left", &"aim right", &"aim up", &"aim down")
 
+    var move_zero = move_dir.is_zero_approx()
+    var aim_zero = aim_dir.is_zero_approx()
+
     if fire_on_button:
         if Input.is_action_just_pressed(&"fire"): start_firing()
         elif Input.is_action_just_released(&"fire"): stop_firing()
     else:
-        if not aim_dir.is_zero_approx(): start_firing()
-        else: stop_firing()
+        if aim_zero: stop_firing()
+        else: start_firing()
 
-    if not aim_dir.is_zero_approx():
-        aim(aim_dir)
+    if rotation_aim_by_rotation:
+        if aim_zero and not move_zero:
+            target_angle = move_dir.angle()
+        elif not aim_zero:
+            target_angle = aim_dir.angle()
     else:
-        aim(transform.x)
-
-    if not move_dir.is_zero_approx():
-        target_angle = move_dir.angle()
+        if not aim_zero:
+            aim_turrets(aim_dir)
+        else:
+            aim_turrets(transform.x)
 
     # Movement
     var forces = move_dir * move_force
@@ -80,7 +87,7 @@ func stop_firing():
         fire_cooldown.stop()
 
 
-func aim(direction: Vector2):
+func aim_turrets(direction: Vector2):
     for t in turrets:
         t.aim(direction)
 
