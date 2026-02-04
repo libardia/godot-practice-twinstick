@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnxc4mlp75r2f"]
+
+[ext_resource type="PackedScene" uid="uid://cv1idgy47h60t" path="res://obj/enemies/asteroids/asteroid_bb2.tscn" id="1_2aj7n"]
+[ext_resource type="Texture2D" uid="uid://dwx7qsstxytsw" path="res://assets/img/asteroid/meteorGrey_big2.png" id="2_ysmjf"]
+
+[node name="AsteroidBG2" unique_id=1515242791 instance=ExtResource("1_2aj7n")]
+
+[node name="Sprite" parent="." index="0" unique_id=1041657037]
+texture = ExtResource("2_ysmjf")

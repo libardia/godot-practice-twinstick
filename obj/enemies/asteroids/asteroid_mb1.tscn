@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dd3ldgf6yn87g"]
+
+[ext_resource type="PackedScene" uid="uid://86tignmrhsg4" path="res://obj/enemies/asteroids/asteroid_base.tscn" id="1_nsmgx"]
+[ext_resource type="Texture2D" uid="uid://cup03j08k3q5" path="res://assets/img/asteroid/meteorBrown_med1.png" id="2_uho0a"]
+
+[node name="AsteroidMB1" unique_id=1515242791 instance=ExtResource("1_nsmgx")]
+mass = 40.0
+
+[node name="Sprite" parent="." index="0" unique_id=1041657037]
+texture = ExtResource("2_uho0a")
+
+[node name="ExtendedCollisionPolygon2D" parent="." index="1" unique_id=709668539]
+position = Vector2(0.54350084, -1.2096717)
+polygon = PackedVector2Array(-9.578772, -18.75219, 16.22357, -17.273617, 20.078636, 8.208594, -0.1451167, 21.280622, -14.638016, 16.023392, -20.91812, -2.7858784)

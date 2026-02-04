@@ -21,6 +21,7 @@ extends CharacterBody2D
 var move_force: float
 var target_angle: float
 var aim_dir: Vector2
+var forces: Vector2
 
 
 func _ready() -> void:
@@ -68,13 +69,29 @@ func _physics_process(_delta: float) -> void:
             aim_turrets(transform.x)
 
     # Movement
-    var forces = move_dir * move_force
+    forces += move_dir * move_force
     # Drag
     forces += -velocity * drag_coeff
 
-    velocity += forces / mass
-    move_and_slide()
-
+    var acceleration = forces / mass
+    forces = Vector2.ZERO
+    velocity += acceleration
+    var vel_before = velocity
+    if move_and_slide():
+        # collision
+        for i in get_slide_collision_count():
+            var collision = get_slide_collision(i)
+            var collider = collision.get_collider()
+            if collider is RigidBody2D:
+                var va = vel_before
+                var vb = collision.get_collider_velocity()
+                var ma = mass
+                var mb = collider.mass
+                var tm = ma + mb
+                velocity = ((ma-mb)/tm)*va + ((2*mb)/tm)*vb
+                collider.linear_velocity = ((2*ma)/tm)*va + ((mb-ma)/tm)*vb
+                print(velocity, collider.linear_velocity)
+                #forces +=
 
 func start_firing():
     if fire_cooldown.is_stopped():

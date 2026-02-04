@@ -8,6 +8,25 @@
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="6_blune"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="7_th5th"]
 [ext_resource type="PackedScene" uid="uid://cv1idgy47h60t" path="res://obj/enemies/asteroids/asteroid_bb2.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://c61by5jcptx6n" path="res://obj/enemies/asteroids/asteroid_bb1.tscn" id="9_0bhws"]
+[ext_resource type="PackedScene" uid="uid://bplwcrg2x8n1t" path="res://obj/enemies/asteroids/asteroid_bb3.tscn" id="10_62atk"]
+[ext_resource type="PackedScene" uid="uid://baej8gojx5qnf" path="res://obj/enemies/asteroids/asteroid_bb4.tscn" id="11_i7in8"]
+[ext_resource type="PackedScene" uid="uid://bo4jdm4brvaaf" path="res://obj/enemies/asteroids/gray/asteroid_bg1.tscn" id="12_gkmcc"]
+[ext_resource type="PackedScene" uid="uid://cnxc4mlp75r2f" path="res://obj/enemies/asteroids/gray/asteroid_bg2.tscn" id="13_7nlll"]
+[ext_resource type="PackedScene" uid="uid://btgwhlyo45rlm" path="res://obj/enemies/asteroids/gray/asteroid_bg3.tscn" id="14_ii537"]
+[ext_resource type="PackedScene" uid="uid://b1bg4bunqhumj" path="res://obj/enemies/asteroids/gray/asteroid_bg4.tscn" id="15_rofvo"]
+[ext_resource type="PackedScene" uid="uid://dd3ldgf6yn87g" path="res://obj/enemies/asteroids/asteroid_mb1.tscn" id="16_tbnf8"]
+[ext_resource type="PackedScene" uid="uid://dexe42awfoa1g" path="res://obj/enemies/asteroids/asteroid_mb2.tscn" id="17_r1bmu"]
+[ext_resource type="PackedScene" uid="uid://do2retkpq5vme" path="res://obj/enemies/asteroids/gray/asteroid_mg1.tscn" id="18_6w6mm"]
+[ext_resource type="PackedScene" uid="uid://bvhiqxrb4j50v" path="res://obj/enemies/asteroids/gray/asteroid_mg2.tscn" id="19_os81g"]
+[ext_resource type="PackedScene" uid="uid://btw3dpou2sq25" path="res://obj/enemies/asteroids/asteroid_sb1.tscn" id="20_1k3ck"]
+[ext_resource type="PackedScene" uid="uid://00nfd3k7m5wd" path="res://obj/enemies/asteroids/asteroid_sb2.tscn" id="21_62f45"]
+[ext_resource type="PackedScene" uid="uid://dslsfuadjq5yp" path="res://obj/enemies/asteroids/gray/asteroid_sg1.tscn" id="22_6g32y"]
+[ext_resource type="PackedScene" uid="uid://bwscdgi62eda2" path="res://obj/enemies/asteroids/gray/asteroid_sg2.tscn" id="23_5nwjq"]
+[ext_resource type="PackedScene" uid="uid://pjcwr2d4m5to" path="res://obj/enemies/asteroids/asteroid_tb1.tscn" id="24_g2upo"]
+[ext_resource type="PackedScene" uid="uid://cno1ylvvj355e" path="res://obj/enemies/asteroids/asteroid_tb2.tscn" id="25_38d3o"]
+[ext_resource type="PackedScene" uid="uid://okhev8dn1pgk" path="res://obj/enemies/asteroids/gray/asteroid_tg1.tscn" id="26_i6fjx"]
+[ext_resource type="PackedScene" uid="uid://cwqivny4go2tp" path="res://obj/enemies/asteroids/gray/asteroid_tg2.tscn" id="27_7dg2i"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
@@ -21,6 +40,77 @@ controller_cursor_mode = 1
 z_index = 1
 rotation = -1.5707964
 
+[node name="Asteroids" type="Node2D" parent="." unique_id=41389052]
+
+[node name="AsteroidBB2" parent="Asteroids" unique_id=1515242791 instance=ExtResource("8_yyfjg")]
+position = Vector2(-127, -223)
+linear_min = Vector2(-100, -100)
+linear_max = Vector2(100, 100)
+angular_min = -1.0
+angular_max = 1.0
+
+[node name="AsteroidBB1" parent="Asteroids" unique_id=1744310577 instance=ExtResource("9_0bhws")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBB3" parent="Asteroids" unique_id=908743381 instance=ExtResource("8_yyfjg")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBB4" parent="Asteroids" unique_id=1210156369 instance=ExtResource("10_62atk")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBB5" parent="Asteroids" unique_id=532193067 instance=ExtResource("11_i7in8")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBG1" parent="Asteroids" unique_id=775061123 instance=ExtResource("12_gkmcc")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBG2" parent="Asteroids" unique_id=2100219096 instance=ExtResource("13_7nlll")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBG3" parent="Asteroids" unique_id=1282735815 instance=ExtResource("14_ii537")]
+position = Vector2(104, -198)
+
+[node name="AsteroidBG4" parent="Asteroids" unique_id=490881443 instance=ExtResource("15_rofvo")]
+position = Vector2(104, -198)
+
+[node name="AsteroidMB1" parent="Asteroids" unique_id=2084749617 instance=ExtResource("16_tbnf8")]
+position = Vector2(104, -198)
+
+[node name="AsteroidMB2" parent="Asteroids" unique_id=1555551145 instance=ExtResource("17_r1bmu")]
+position = Vector2(104, -198)
+
+[node name="AsteroidMG1" parent="Asteroids" unique_id=1930298902 instance=ExtResource("18_6w6mm")]
+position = Vector2(104, -198)
+
+[node name="AsteroidMG2" parent="Asteroids" unique_id=1316065479 instance=ExtResource("19_os81g")]
+position = Vector2(104, -198)
+
+[node name="AsteroidSB1" parent="Asteroids" unique_id=110688798 instance=ExtResource("20_1k3ck")]
+position = Vector2(104, -198)
+
+[node name="AsteroidSB2" parent="Asteroids" unique_id=926102684 instance=ExtResource("21_62f45")]
+position = Vector2(104, -198)
+
+[node name="AsteroidSG1" parent="Asteroids" unique_id=964081391 instance=ExtResource("22_6g32y")]
+position = Vector2(104, -198)
+mass = 1.0
+
+[node name="AsteroidSG2" parent="Asteroids" unique_id=154311218 instance=ExtResource("23_5nwjq")]
+position = Vector2(104, -198)
+mass = 1.0
+
+[node name="AsteroidTB1" parent="Asteroids" unique_id=1746956811 instance=ExtResource("24_g2upo")]
+position = Vector2(104, -198)
+
+[node name="AsteroidTB2" parent="Asteroids" unique_id=1140856200 instance=ExtResource("25_38d3o")]
+position = Vector2(104, -198)
+
+[node name="AsteroidTB3" parent="Asteroids" unique_id=425041619 instance=ExtResource("26_i6fjx")]
+position = Vector2(104, -198)
+
+[node name="AsteroidTB4" parent="Asteroids" unique_id=901720420 instance=ExtResource("27_7dg2i")]
+position = Vector2(104, -198)
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747640961]
 z_index = -10
 scroll_scale = Vector2(0.2, 0.2)
@@ -30,10 +120,3 @@ script = ExtResource("4_a8run")
 stars_textures = Array[Texture2D]([ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th")])
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
-
-[node name="AsteroidBB2" parent="." unique_id=1515242791 instance=ExtResource("8_yyfjg")]
-position = Vector2(-246, -78)
-linear_min = Vector2(-100, -100)
-linear_max = Vector2(100, 100)
-angular_min = -1.0
-angular_max = 1.0

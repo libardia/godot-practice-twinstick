@@ -14,6 +14,7 @@ size = Vector2(30.13, 22.48)
 radius = 25.8
 
 [node name="Player" type="CharacterBody2D" unique_id=681213816]
+motion_mode = 1
 script = ExtResource("1_g3svd")
 rotation_aim_by_rotation = true
 
