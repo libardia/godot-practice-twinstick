@@ -1,10 +1,9 @@
-#class_name Player
-extends CharacterBody2D
+class_name Player
+extends RigidBody2D
 
 @export_group("Movement")
-@export var max_speed: float = 750
-@export var drag_coeff: float = 0.3
-@export var mass: float = 10
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var max_speed: float = 750
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s/s") var acceleration: float = 2000
 
 @export_group("Rotation", "rotation_")
 @export var rotation_lerp_factor: float = 3
@@ -19,21 +18,16 @@ extends CharacterBody2D
 @onready var fire_cooldown: Timer = $FireCooldown
 
 var move_force: float
+var drag_coeff: float
 var target_angle: float
 var aim_dir: Vector2
-var forces: Vector2
 
 
 func _ready() -> void:
     turrets.assign($Turrets.get_children())
-    move_force = max_speed * drag_coeff
-
-
-func _process(delta: float) -> void:
-    rotation = lerp_angle(
-        rotation, target_angle,
-        ease(rotation_lerp_factor * delta, rotation_ease_factor)
-    )
+    move_force = acceleration * mass
+    drag_coeff = move_force / pow(max_speed, 1)
+    print(move_force, " ", drag_coeff)
 
 
 func _physics_process(_delta: float) -> void:
@@ -68,34 +62,16 @@ func _physics_process(_delta: float) -> void:
         else:
             aim_turrets(transform.x)
 
-    # Movement
-    forces += move_dir * move_force
-    # Drag
-    forces += -velocity * drag_coeff
+    constant_force = Vector2.ZERO
+    constant_force += move_dir * move_force
+    constant_force += -linear_velocity * drag_coeff
 
-    var acceleration = forces / mass
-    forces = Vector2.ZERO
-    velocity += acceleration
-    var vel_before = velocity
-    if move_and_slide():
-        # collision
-        for i in get_slide_collision_count():
-            var collision = get_slide_collision(i)
-            var collider = collision.get_collider()
-            if collider is RigidBody2D:
-                var va = vel_before
-                var vb = collision.get_collider_velocity()
-                var ma = mass
-                var mb = collider.mass
-                var tm = ma + mb
-                var va2 = ((ma-mb)/tm)*va + ((2*mb)/tm)*vb
-                var vb2 = ((2*ma)/tm)*va + ((mb-ma)/tm)*vb
-                var aa = va2 - va
-                var ab = vb2 - vb
-                var fa = mass * aa
-                var fb = collider.mass * ab
-                forces += fa
-                collider.apply_impulse(fb)
+
+func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
+    rotation = lerp_angle(
+        rotation, target_angle,
+        ease(rotation_lerp_factor * get_physics_process_delta_time(), rotation_ease_factor)
+    )
 
 func start_firing():
     if fire_cooldown.is_stopped():
@@ -117,8 +93,8 @@ func fire():
     for t in turrets:
         if bullet_include_velocity:
             if bullet_project_velocity:
-                t.fire(velocity.project(aim_dir))
+                t.fire(linear_velocity.project(aim_dir))
             else:
-                t.fire(velocity)
+                t.fire(linear_velocity)
         else:
             t.fire()
