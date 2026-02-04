@@ -16,6 +16,7 @@ extends Node2D
 
 var seen_rect: Rect2
 var chunks: Dictionary[Vector2i, StarChunk] = {}
+var rng := RandomNumberGenerator.new()
 
 
 func _process(_delta: float) -> void:

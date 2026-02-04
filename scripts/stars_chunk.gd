@@ -2,11 +2,13 @@ class_name StarChunk
 extends Node2D
 
 
-var rng := RandomNumberGenerator.new()
 var chunk_coords := Vector2i.ZERO
 
 
 func setup(base: Stars, coords: Vector2i):
+    # Save a reference to the base's rng
+    var rng = base.rng
+
     chunk_coords = coords
     rng.seed = hash(chunk_coords)
 
