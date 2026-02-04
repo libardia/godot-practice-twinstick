@@ -1,6 +1,9 @@
 class_name Asteroid
 extends RigidBody2D
 
+@export_group("Physics")
+@export var size: int = 0
+@export var base_mass: float = 2
 
 @export_group("Initial Velocity", "linear_")
 @export_custom(PROPERTY_HINT_LINK, "") var linear_min: Vector2
@@ -9,6 +12,11 @@ extends RigidBody2D
 @export_group("Initial Angular Velocity", "angular_")
 @export var angular_min: float
 @export var angular_max: float
+
+
+func _enter_tree() -> void:
+    mass = base_mass * pow(2, size)
+
 
 func _ready() -> void:
     linear_velocity = Vector2(

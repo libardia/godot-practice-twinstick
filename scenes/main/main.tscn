@@ -27,6 +27,12 @@
 [ext_resource type="PackedScene" uid="uid://cno1ylvvj355e" path="res://obj/enemies/asteroids/asteroid_tb2.tscn" id="25_38d3o"]
 [ext_resource type="PackedScene" uid="uid://okhev8dn1pgk" path="res://obj/enemies/asteroids/gray/asteroid_tg1.tscn" id="26_i6fjx"]
 [ext_resource type="PackedScene" uid="uid://cwqivny4go2tp" path="res://obj/enemies/asteroids/gray/asteroid_tg2.tscn" id="27_7dg2i"]
+[ext_resource type="Texture2D" uid="uid://de1r3syi3aj0p" path="res://assets/img/ship/playerShip3_green.png" id="28_rofvo"]
+[ext_resource type="Texture2D" uid="uid://hc2kd68wtigv" path="res://assets/img/ship/playerShip1_green.png" id="29_tbnf8"]
+[ext_resource type="Texture2D" uid="uid://djx884mryyacp" path="res://assets/img/ship/playerShip2_blue.png" id="30_r1bmu"]
+[ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/ship/playerShip2_orange.png" id="31_6w6mm"]
+[ext_resource type="Texture2D" uid="uid://ceqhc62lkpwn3" path="res://assets/img/ship/playerShip3_red.png" id="32_os81g"]
+[ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/ship/playerShip3_orange.png" id="33_1k3ck"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
@@ -46,8 +52,6 @@ rotation = -1.5707964
 position = Vector2(-127, -223)
 linear_min = Vector2(-100, -100)
 linear_max = Vector2(100, 100)
-angular_min = -1.0
-angular_max = 1.0
 
 [node name="AsteroidBB1" parent="Asteroids" unique_id=1744310577 instance=ExtResource("9_0bhws")]
 position = Vector2(104, -198)
@@ -120,3 +124,35 @@ script = ExtResource("4_a8run")
 stars_textures = Array[Texture2D]([ExtResource("5_ouso4"), ExtResource("6_blune"), ExtResource("7_th5th")])
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
+
+[node name="PlayerShip3Green" type="Sprite2D" parent="." unique_id=218668830]
+position = Vector2(-287, 60)
+texture = ExtResource("28_rofvo")
+
+[node name="PlayerShip1Green" type="Sprite2D" parent="." unique_id=788140789]
+position = Vector2(336, 23)
+texture = ExtResource("29_tbnf8")
+
+[node name="PlayerShip2Blue" type="Sprite2D" parent="." unique_id=644809038]
+position = Vector2(295, -165)
+texture = ExtResource("30_r1bmu")
+
+[node name="PlayerShip2Orange" type="Sprite2D" parent="." unique_id=1564196216]
+position = Vector2(-168, 105)
+texture = ExtResource("31_6w6mm")
+
+[node name="PlayerShip3Red" type="Sprite2D" parent="." unique_id=182987722]
+position = Vector2(-203, -75)
+texture = ExtResource("32_os81g")
+
+[node name="PlayerShip3Orange" type="Sprite2D" parent="." unique_id=1279975929]
+position = Vector2(61, 147)
+texture = ExtResource("33_1k3ck")
+
+[node name="PlayerShip3Green2" type="Sprite2D" parent="." unique_id=1851546525]
+position = Vector2(431, -208)
+texture = ExtResource("28_rofvo")
+
+[node name="PlayerShip3Red2" type="Sprite2D" parent="." unique_id=1543910054]
+position = Vector2(-379, -180)
+texture = ExtResource("32_os81g")

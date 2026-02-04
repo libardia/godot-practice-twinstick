@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7mxj5wcu4oi7"]
 
-[ext_resource type="Script" uid="uid://gj8mg7vh8en6" path="res://obj/player/player.gd" id="1_g3svd"]
+[ext_resource type="Script" uid="uid://ctlkd0g8044p8" path="res://obj/player/player_rigid.gd" id="1_xopso"]
 [ext_resource type="Texture2D" uid="uid://brhaqo7uva4gf" path="res://assets/img/ship/playerShip1_orange.png" id="2_xopso"]
 [ext_resource type="PackedScene" uid="uid://cgo4qtqd6e4e6" path="res://obj/turret/turret_basic.tscn" id="3_rhfbe"]
 
@@ -13,9 +13,13 @@ size = Vector2(30.13, 22.48)
 [sub_resource type="CircleShape2D" id="CircleShape2D_r86bn"]
 radius = 25.8
 
-[node name="Player" type="CharacterBody2D" unique_id=681213816]
-motion_mode = 1
-script = ExtResource("1_g3svd")
+[node name="Player" type="RigidBody2D" unique_id=24916606]
+mass = 10.0
+center_of_mass_mode = 1
+lock_rotation = true
+script = ExtResource("1_xopso")
+rotation_lerp_factor = 5.0
+rotation_ease_factor = 0.2
 rotation_aim_by_rotation = true
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]

@@ -5,8 +5,6 @@
 
 [node name="AsteroidBase" type="RigidBody2D" unique_id=1515242791]
 script = ExtResource("1_0ofqo")
-angular_min = 10.0
-angular_max = 10.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
 
