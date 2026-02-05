@@ -10,6 +10,8 @@ script = ExtResource("1_0webi")
 bullet_scene = ExtResource("4_nvrhd")
 bullet_speed = 2000.0
 smooth_aim = false
+aim_lerp_factor = 5.0
+aim_ease_factor = 0.2
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=1125298590]
 visible = false

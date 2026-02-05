@@ -8,8 +8,8 @@ extends Node2D
 
 @export_group("Aim", "aim_")
 @export var smooth_aim: bool = true
-@export var aim_lerp_factor: float = 5
-@export var aim_ease_factor: float = 0.2
+@export var aim_lerp_factor: float
+@export var aim_ease_factor: float
 
 @onready var gun: Node2D = $Gun
 @onready var fire_points: Array[Marker2D]

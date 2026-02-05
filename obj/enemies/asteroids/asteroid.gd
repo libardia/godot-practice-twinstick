@@ -2,8 +2,8 @@ class_name Asteroid
 extends RigidBody2D
 
 @export_group("Physics")
-@export var size: int = 0
-@export var base_mass: float = 2
+@export var size: int
+@export var base_mass: float = 1
 
 @export_group("Initial Velocity", "linear_")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var linear_min: float
