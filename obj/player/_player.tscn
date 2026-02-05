@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctlkd0g8044p8" path="res://obj/player/player.gd" id="1_xopso"]
 [ext_resource type="Texture2D" uid="uid://brhaqo7uva4gf" path="res://assets/img/ship/playerShip1_orange.png" id="2_xopso"]
-[ext_resource type="PackedScene" uid="uid://cgo4qtqd6e4e6" path="res://obj/turret/turret_basic.tscn" id="3_rhfbe"]
+[ext_resource type="PackedScene" uid="uid://cgo4qtqd6e4e6" path="res://obj/turret/_turret_basic.tscn" id="3_rhfbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xopso"]
 size = Vector2(27.435, 95.645)

@@ -6,12 +6,12 @@ extends RigidBody2D
 @export var base_mass: float = 2
 
 @export_group("Initial Velocity", "linear_")
-@export_custom(PROPERTY_HINT_LINK, "") var linear_min: Vector2
-@export_custom(PROPERTY_HINT_LINK, "") var linear_max: Vector2
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var linear_min: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var linear_max: float
 
 @export_group("Initial Angular Velocity", "angular_")
-@export var angular_min: float
-@export var angular_max: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:rad/s") var angular_min: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:rad/s") var angular_max: float
 
 
 func _enter_tree() -> void:
@@ -19,8 +19,10 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-    linear_velocity = Vector2(
-        lerpf(linear_min.x, linear_max.x, randf()),
-        lerpf(linear_min.y, linear_max.y, randf())
-    )
+    # random speed in a random direction
+    var speed = lerpf(linear_min, linear_max, randf())
+    var angle = lerpf(0, TAU, randf())
+    linear_velocity = Vector2.RIGHT.rotated(angle) * speed
+    # random angular velocity, 50/50 positive or negative
     angular_velocity = lerpf(angular_min, angular_max, randf())
+    if randi_range(0, 1): angular_velocity *= -1

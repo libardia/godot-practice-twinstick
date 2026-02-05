@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cyed1okohu4lh" path="res://obj/turret/turret.gd" id="1_0webi"]
 [ext_resource type="Texture2D" uid="uid://cgftmu1xfh2ij" path="res://assets/img/turret/gun06.png" id="2_ftgyb"]
 [ext_resource type="Texture2D" uid="uid://bt8ml0lbvvlgx" path="res://assets/img/turret/turretBase_small.png" id="3_nvrhd"]
-[ext_resource type="PackedScene" uid="uid://c3jpn5qdcaode" path="res://obj/bullet/bullet.tscn" id="4_nvrhd"]
+[ext_resource type="PackedScene" uid="uid://c3jpn5qdcaode" path="res://obj/bullet/_bullet.tscn" id="4_nvrhd"]
 
 [node name="TurretBasic" type="Node2D" unique_id=1943116017]
 script = ExtResource("1_0webi")
