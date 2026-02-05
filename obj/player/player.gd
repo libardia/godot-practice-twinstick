@@ -3,7 +3,7 @@ extends RigidBody2D
 
 @export_group("Movement")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var max_speed: float = 750
-@export_custom(PROPERTY_HINT_NONE, "suffix:px/s/s") var acceleration: float = 2000
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s²") var acceleration: float = 2000
 
 @export_group("Rotation", "rotation_")
 @export var rotation_lerp_factor: float = 3

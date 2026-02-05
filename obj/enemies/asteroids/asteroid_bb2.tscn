@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://diid6mkbumxyx" path="res://assets/img/asteroid/meteorBrown_big2.png" id="2_2qi7i"]
 
 [node name="AsteroidBB2" unique_id=1515242791 instance=ExtResource("1_2qi7i")]
-mass = 80.0
+size = 3
 
 [node name="Sprite" parent="." index="0" unique_id=1041657037]
 texture = ExtResource("2_2qi7i")
