@@ -1,6 +1,7 @@
 class_name Player
 extends RigidBody2D
 
+
 @export_group("Movement")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var max_speed: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s²") var acceleration: float
@@ -14,8 +15,8 @@ extends RigidBody2D
 @export var bullet_include_velocity: bool = true
 @export var bullet_project_velocity: bool = true
 
+@onready var fire_cooldown: Timer = %FireCooldown
 @onready var turrets: Array[Turret]
-@onready var fire_cooldown: Timer = $FireCooldown
 
 var move_force: float
 var drag_coeff: float
@@ -24,7 +25,7 @@ var aim_dir: Vector2
 
 
 func _ready() -> void:
-    turrets.assign($Turrets.get_children())
+    turrets.assign(%Turrets.get_children())
     move_force = acceleration * mass
     drag_coeff = move_force / pow(max_speed, 1)
     print(move_force, " ", drag_coeff)

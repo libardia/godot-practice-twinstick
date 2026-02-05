@@ -18,7 +18,8 @@ var target_angle: float
 
 
 func _ready() -> void:
-    fire_points.assign($Gun/FirePoints.get_children())
+    print(%FirePoints)
+    fire_points.assign(%FirePoints.get_children())
 
 
 func aim(direction: Vector2):

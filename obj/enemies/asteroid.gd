@@ -1,6 +1,7 @@
 class_name Asteroid
 extends RigidBody2D
 
+
 @export_group("Physics")
 @export var size: int
 @export var base_mass: float = 1

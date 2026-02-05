@@ -25,6 +25,7 @@ rotation_ease_factor = 0.2
 rotation_aim_by_rotation = true
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
+unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.2
 
@@ -38,6 +39,7 @@ rotation = 1.5707964
 texture = ExtResource("2_xopso")
 
 [node name="Turrets" type="Node2D" parent="." unique_id=2123766699]
+unique_name_in_owner = true
 
 [node name="TurretBasic" parent="Turrets" unique_id=1943116017 instance=ExtResource("3_rhfbe")]
 z_index = -3
