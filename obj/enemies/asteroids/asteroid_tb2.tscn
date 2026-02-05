@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cno1ylvvj355e"]
 
-[ext_resource type="PackedScene" uid="uid://86tignmrhsg4" path="res://obj/enemies/asteroids/_asteroid_base.tscn" id="1_7nfly"]
+[ext_resource type="PackedScene" uid="uid://86tignmrhsg4" path="res://obj/enemies/asteroid.tscn" id="1_7nfly"]
 [ext_resource type="Texture2D" uid="uid://yekvon8pn3lw" path="res://assets/img/asteroid/meteorBrown_tiny2.png" id="2_pddb7"]
 
 [node name="AsteroidTB2" unique_id=1515242791 instance=ExtResource("1_7nfly")]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://86tignmrhsg4"]
+
+[ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroid.gd" id="1_pcuo8"]
+[ext_resource type="Script" uid="uid://dfliux2w8l2hx" path="res://addons/commons/nodes/extended_collision_polygon_2d.gd" id="2_ix00t"]
+
+[node name="Asteroid" type="RigidBody2D" unique_id=1515242791]
+script = ExtResource("1_pcuo8")
+base_mass = 10.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
+
+[node name="ExtendedCollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
+script = ExtResource("2_ix00t")
+metadata/_custom_type_script = "uid://dfliux2w8l2hx"

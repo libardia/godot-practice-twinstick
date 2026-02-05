@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1bg4bunqhumj"]
 
-[ext_resource type="PackedScene" uid="uid://baej8gojx5qnf" path="res://obj/enemies/asteroids/impl/asteroid_bb4.tscn" id="1_vcnl1"]
+[ext_resource type="PackedScene" uid="uid://baej8gojx5qnf" path="res://obj/enemies/asteroids/asteroid_bb4.tscn" id="1_vcnl1"]
 [ext_resource type="Texture2D" uid="uid://kmapfxmkkdod" path="res://assets/img/asteroid/meteorGrey_big4.png" id="2_pswiq"]
 
 [node name="AsteroidBG4" unique_id=1515242791 instance=ExtResource("1_vcnl1")]
