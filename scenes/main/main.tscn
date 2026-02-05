@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://d3kqivgtew5f1"]
 
-[ext_resource type="Script" uid="uid://6q2pvfruvvdc" path="res://scenes/main/adaptive_cursor.gd" id="1_trceg"]
-[ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_jkv2x"]
-[ext_resource type="Script" uid="uid://8r4jy1jnjlt" path="res://scenes/main/random_asteroids.gd" id="4_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="5_muem4"]
-[ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="6_dp3eg"]
-[ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="7_0ld40"]
-[ext_resource type="Texture2D" uid="uid://de1r3syi3aj0p" path="res://assets/img/ship/playerShip3_green.png" id="8_gqmmt"]
-[ext_resource type="Texture2D" uid="uid://hc2kd68wtigv" path="res://assets/img/ship/playerShip1_green.png" id="9_yc10j"]
-[ext_resource type="Texture2D" uid="uid://djx884mryyacp" path="res://assets/img/ship/playerShip2_blue.png" id="10_jscy8"]
-[ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/ship/playerShip2_orange.png" id="11_pm3ni"]
-[ext_resource type="Texture2D" uid="uid://ceqhc62lkpwn3" path="res://assets/img/ship/playerShip3_red.png" id="12_y6deb"]
-[ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/ship/playerShip3_orange.png" id="13_og1vs"]
+[ext_resource type="Script" uid="uid://6q2pvfruvvdc" path="res://scenes/main/adaptive_cursor.gd" id="1_th5th"]
+[ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_7smn1"]
+[ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_raeie"]
+[ext_resource type="Script" uid="uid://8r4jy1jnjlt" path="res://scenes/main/random_asteroids.gd" id="4_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="5_nvumn"]
+[ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="6_ou6is"]
+[ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="7_necax"]
+[ext_resource type="Texture2D" uid="uid://de1r3syi3aj0p" path="res://assets/img/ship/playerShip3_green.png" id="8_r4lks"]
+[ext_resource type="Texture2D" uid="uid://hc2kd68wtigv" path="res://assets/img/ship/playerShip1_green.png" id="9_pg34l"]
+[ext_resource type="Texture2D" uid="uid://djx884mryyacp" path="res://assets/img/ship/playerShip2_blue.png" id="10_m4h2d"]
+[ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/ship/playerShip2_orange.png" id="11_p8abn"]
+[ext_resource type="Texture2D" uid="uid://ceqhc62lkpwn3" path="res://assets/img/ship/playerShip3_red.png" id="12_s17dp"]
+[ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/ship/playerShip3_orange.png" id="13_37hlw"]
 
 [sub_resource type="GDScript" id="GDScript_sxbnv"]
 script/source = "## Generates a random background of stars
@@ -83,17 +83,17 @@ func _process(_delta: float) -> void:
 [node name="Main" type="Node2D" unique_id=1026637475]
 
 [node name="AdaptiveCursor" type="Node" parent="." unique_id=375166096]
-script = ExtResource("1_trceg")
-cursor = ExtResource("2_a8y0u")
+script = ExtResource("1_th5th")
+cursor = ExtResource("2_7smn1")
 hotspot = Vector2(14, 14)
 controller_cursor_mode = 1
 
-[node name="Player" parent="." unique_id=1861245870 instance=ExtResource("3_jkv2x")]
+[node name="Player" parent="." unique_id=1861245870 instance=ExtResource("3_raeie")]
 z_index = 1
 rotation = -1.5707964
 
 [node name="Asteroids" type="Node2D" parent="." unique_id=41389052]
-script = ExtResource("4_jbj1t")
+script = ExtResource("4_hxu8e")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747640961]
 z_index = -10
@@ -101,38 +101,38 @@ scroll_scale = Vector2(0.2, 0.2)
 
 [node name="Stars" type="Node2D" parent="Parallax2D" unique_id=1312143591]
 script = SubResource("GDScript_sxbnv")
-stars_textures = Array[Texture2D]([ExtResource("5_muem4"), ExtResource("6_dp3eg"), ExtResource("7_0ld40")])
+stars_textures = Array[Texture2D]([ExtResource("5_nvumn"), ExtResource("6_ou6is"), ExtResource("7_necax")])
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
 
 [node name="PlayerShip3Green" type="Sprite2D" parent="." unique_id=218668830]
 position = Vector2(-287, 60)
-texture = ExtResource("8_gqmmt")
+texture = ExtResource("8_r4lks")
 
 [node name="PlayerShip1Green" type="Sprite2D" parent="." unique_id=788140789]
 position = Vector2(336, 23)
-texture = ExtResource("9_yc10j")
+texture = ExtResource("9_pg34l")
 
 [node name="PlayerShip2Blue" type="Sprite2D" parent="." unique_id=644809038]
 position = Vector2(295, -165)
-texture = ExtResource("10_jscy8")
+texture = ExtResource("10_m4h2d")
 
 [node name="PlayerShip2Orange" type="Sprite2D" parent="." unique_id=1564196216]
 position = Vector2(-168, 105)
-texture = ExtResource("11_pm3ni")
+texture = ExtResource("11_p8abn")
 
 [node name="PlayerShip3Red" type="Sprite2D" parent="." unique_id=182987722]
 position = Vector2(-203, -75)
-texture = ExtResource("12_y6deb")
+texture = ExtResource("12_s17dp")
 
 [node name="PlayerShip3Orange" type="Sprite2D" parent="." unique_id=1279975929]
 position = Vector2(61, 147)
-texture = ExtResource("13_og1vs")
+texture = ExtResource("13_37hlw")
 
 [node name="PlayerShip3Green2" type="Sprite2D" parent="." unique_id=1851546525]
 position = Vector2(431, -208)
-texture = ExtResource("8_gqmmt")
+texture = ExtResource("8_r4lks")
 
 [node name="PlayerShip3Red2" type="Sprite2D" parent="." unique_id=1543910054]
 position = Vector2(-379, -180)
-texture = ExtResource("12_y6deb")
+texture = ExtResource("12_s17dp")
