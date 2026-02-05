@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_7smn1"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_raeie"]
 [ext_resource type="Script" uid="uid://8r4jy1jnjlt" path="res://scenes/main/random_asteroids.gd" id="4_hxu8e"]
+[ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scenes/main/stars.gd" id="5_7smn1"]
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="5_nvumn"]
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="6_ou6is"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="7_necax"]
@@ -13,72 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/ship/playerShip2_orange.png" id="11_p8abn"]
 [ext_resource type="Texture2D" uid="uid://ceqhc62lkpwn3" path="res://assets/img/ship/playerShip3_red.png" id="12_s17dp"]
 [ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/ship/playerShip3_orange.png" id="13_37hlw"]
-
-[sub_resource type="GDScript" id="GDScript_sxbnv"]
-script/source = "## Generates a random background of stars
-class_name Stars
-extends Node2D
-
-
-@export_group(\"Stars\", \"stars_\")
-@export var stars_textures: Array[Texture2D] = []
-@export var stars_modulate: Color = Color.WHITE
-@export_custom(PROPERTY_HINT_NONE, \"suffix:%\") var stars_min_scale := 0.25
-@export_custom(PROPERTY_HINT_NONE, \"suffix:%\") var stars_max_scale := 0.75
-@export_group(\"Generation\")
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, \"suffix:px\") var chunk_size := 1024.0
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, \"suffix:chunks\") var deload_distance := 10.0
-@export var star_density := 40
-@export var debug := false
-
-var seen_rect: Rect2
-var chunks: Dictionary[Vector2i, StarChunk] = {}
-var rng := RandomNumberGenerator.new()
-
-
-func _process(_delta: float) -> void:
-    seen_rect = get_viewport_rect()
-    var half_size = seen_rect.size / 2.0
-
-    if get_parent() is Parallax2D:
-        # Special handling for parallax
-        seen_rect.position = get_parent().screen_offset - get_parent().position
-    else:
-        var cam = get_viewport().get_camera_2d()
-        if cam != null:
-            seen_rect.position = cam.global_position - half_size
-
-    var seen_chunks = Rect2i(
-        floor(seen_rect.position / chunk_size),
-        ceil(seen_rect.size / chunk_size) + Vector2.ONE
-    )
-    var seen_center = seen_rect.get_center() / chunk_size
-
-    # abort if the whole seen area is bigger than deload distance
-    if max(seen_chunks.size.x, seen_chunks.size.y) > deload_distance:
-        return
-
-    # make chunks if necessary
-    for cx in range(seen_chunks.position.x, seen_chunks.end.x):
-        for cy in range(seen_chunks.position.y, seen_chunks.end.y):
-            var chunk_coord = Vector2i(cx, cy)
-            if not chunks.has(chunk_coord):
-                if debug:
-                    print(\"Stars: make chunk at \", chunk_coord)
-                var chunk = StarChunk.new()
-                chunk.setup(self, chunk_coord)
-                add_child(chunk)
-                chunks[chunk_coord] = chunk
-
-    # delete chunks too far away
-    for chunk_coord: Vector2i in chunks.keys():
-        if seen_center.distance_squared_to(chunk_coord) > deload_distance ** 2:
-            if debug:
-                print(\"Stars: destroy chunk at \", chunk_coord)
-            var chunk = chunks[chunk_coord]
-            chunks.erase(chunk_coord)
-            chunk.queue_free()
-"
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 
@@ -99,8 +34,8 @@ script = ExtResource("4_hxu8e")
 z_index = -10
 scroll_scale = Vector2(0.2, 0.2)
 
-[node name="Stars" type="Node2D" parent="Parallax2D" unique_id=1312143591]
-script = SubResource("GDScript_sxbnv")
+[node name="Stars" type="Node2D" parent="Parallax2D" unique_id=2054853245]
+script = ExtResource("5_7smn1")
 stars_textures = Array[Texture2D]([ExtResource("5_nvumn"), ExtResource("6_ou6is"), ExtResource("7_necax")])
 stars_modulate = Color(0.39607844, 0.39607844, 0.39607844, 0.84705883)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
