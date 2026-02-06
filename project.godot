@@ -15,8 +15,10 @@ Log/streams/Main=0
 [application]
 
 config/name="Practice Twinstick"
+config/tags=PackedStringArray("2d", "example", "mine")
 run/main_scene="uid://d3kqivgtew5f1"
 config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="uid://c14wjt4xvjqdr"
 
 [autoload]
 
