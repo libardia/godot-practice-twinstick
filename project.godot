@@ -30,7 +30,7 @@ InputDetector="*uid://c2qsh6370ql0"
 [display]
 
 window/size/mode=3
-window/size/mode.editor=0
+window/size/mode.editor=3
 
 [dotnet]
 
@@ -39,6 +39,10 @@ project/assembly_name="Practice Twinstick"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/logger/plugin.cfg")
+
+[global_group]
+
+asteroid=""
 
 [input]
 

@@ -5,12 +5,10 @@ extends RigidBody2D
 @export_group("Movement")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var max_speed: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s²") var acceleration: float
-
 @export_group("Rotation", "rotation_")
 @export var rotation_lerp_factor: float
 @export var rotation_ease_factor: float
 @export var rotation_aim_by_rotation: bool = false
-
 @export_group("Bullets", "bullet_")
 @export var bullet_include_velocity: bool = true
 @export var bullet_project_velocity: bool = true
@@ -28,7 +26,6 @@ func _ready() -> void:
     turrets.assign(%Turrets.get_children())
     move_force = acceleration * mass
     drag_coeff = move_force / pow(max_speed, 1)
-    print(move_force, " ", drag_coeff)
 
 
 func _physics_process(_delta: float) -> void:

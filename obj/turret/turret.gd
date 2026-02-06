@@ -18,7 +18,6 @@ var target_angle: float
 
 
 func _ready() -> void:
-    print(%FirePoints)
     fire_points.assign(%FirePoints.get_children())
 
 
