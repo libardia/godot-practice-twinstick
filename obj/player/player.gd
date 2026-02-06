@@ -71,6 +71,7 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
         ease(rotation_lerp_factor * get_physics_process_delta_time(), rotation_ease_factor)
     )
 
+
 func start_firing():
     if fire_cooldown.is_stopped():
         fire()

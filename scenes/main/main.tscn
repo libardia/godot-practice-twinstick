@@ -8,13 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="6_raeie"]
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="7_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="8_nvumn"]
-[ext_resource type="Texture2D" uid="uid://de1r3syi3aj0p" path="res://assets/img/ship/playerShip3_green.png" id="8_r4lks"]
-[ext_resource type="Texture2D" uid="uid://hc2kd68wtigv" path="res://assets/img/ship/playerShip1_green.png" id="9_pg34l"]
-[ext_resource type="Texture2D" uid="uid://djx884mryyacp" path="res://assets/img/ship/playerShip2_blue.png" id="10_m4h2d"]
-[ext_resource type="Texture2D" uid="uid://b1gl4llpc7rg6" path="res://assets/img/ship/playerShip2_orange.png" id="11_p8abn"]
-[ext_resource type="Texture2D" uid="uid://ceqhc62lkpwn3" path="res://assets/img/ship/playerShip3_red.png" id="12_s17dp"]
-[ext_resource type="Texture2D" uid="uid://cwjrbk81e6en3" path="res://assets/img/ship/playerShip3_orange.png" id="13_37hlw"]
-[ext_resource type="PackedScene" uid="uid://c61by5jcptx6n" path="res://obj/enemies/asteroid/impl/asteroid_bb1.tscn" id="16_hxu8e"]
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 script = ExtResource("1_raeie")
@@ -38,38 +31,3 @@ script = ExtResource("5_blune")
 stars_textures = Array[Texture2D]([ExtResource("6_raeie"), ExtResource("7_hxu8e"), ExtResource("8_nvumn")])
 stars_modulate = Color(0.5176471, 0.5176471, 0.5176471, 0.6745098)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
-
-[node name="PlayerShip3Green" type="Sprite2D" parent="." unique_id=218668830]
-position = Vector2(-287, 60)
-texture = ExtResource("8_r4lks")
-
-[node name="PlayerShip1Green" type="Sprite2D" parent="." unique_id=788140789]
-position = Vector2(336, 23)
-texture = ExtResource("9_pg34l")
-
-[node name="PlayerShip2Blue" type="Sprite2D" parent="." unique_id=644809038]
-position = Vector2(295, -165)
-texture = ExtResource("10_m4h2d")
-
-[node name="PlayerShip2Orange" type="Sprite2D" parent="." unique_id=1564196216]
-position = Vector2(-168, 105)
-texture = ExtResource("11_p8abn")
-
-[node name="PlayerShip3Red" type="Sprite2D" parent="." unique_id=182987722]
-position = Vector2(-203, -75)
-texture = ExtResource("12_s17dp")
-
-[node name="PlayerShip3Orange" type="Sprite2D" parent="." unique_id=1279975929]
-position = Vector2(61, 147)
-texture = ExtResource("13_37hlw")
-
-[node name="PlayerShip3Green2" type="Sprite2D" parent="." unique_id=1851546525]
-position = Vector2(431, -208)
-texture = ExtResource("8_r4lks")
-
-[node name="PlayerShip3Red2" type="Sprite2D" parent="." unique_id=1543910054]
-position = Vector2(-379, -180)
-texture = ExtResource("12_s17dp")
-
-[node name="AsteroidBB1" parent="." unique_id=1515242791 instance=ExtResource("16_hxu8e")]
-position = Vector2(-85, -184)
