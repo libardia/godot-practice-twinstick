@@ -13,8 +13,9 @@ autostart = true
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1032581405]
 
-[node name="OwnedArea2D" type="Area2D" parent="." unique_id=623163640]
+[node name="OwnedArea2D" type="Area2D" parent="." unique_id=623163640 node_paths=PackedStringArray("owned_by")]
 script = ExtResource("2_eb0oy")
+owned_by = NodePath("..")
 metadata/_custom_type_script = "uid://dpjl8vnikkk1g"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OwnedArea2D" unique_id=209751782]

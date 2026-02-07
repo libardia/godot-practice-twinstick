@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cgo4qtqd6e4e6"]
 
 [ext_resource type="Script" uid="uid://cyed1okohu4lh" path="res://obj/turret/turret.gd" id="1_oqblv"]
-[ext_resource type="PackedScene" uid="uid://c3jpn5qdcaode" path="res://obj/bullet/bullet.tscn" id="2_u21fu"]
+[ext_resource type="PackedScene" uid="uid://bi0qdqdk5x0op" path="res://obj/bullet/impl/bullet_player.tscn" id="2_oqblv"]
 [ext_resource type="Texture2D" uid="uid://bt8ml0lbvvlgx" path="res://assets/img/turret/turretBase_small.png" id="3_e3cl8"]
 [ext_resource type="Texture2D" uid="uid://cgftmu1xfh2ij" path="res://assets/img/turret/gun06.png" id="4_s52a1"]
 
 [node name="TurretBasic" type="Node2D" unique_id=1943116017]
 script = ExtResource("1_oqblv")
-bullet_scene = ExtResource("2_u21fu")
+bullet_scene = ExtResource("2_oqblv")
 bullet_speed = 2000.0
 smooth_aim = false
 aim_lerp_factor = 5.0
