@@ -43,8 +43,8 @@ func _physics_process(_delta: float) -> void:
     var aim_zero = aim_dir.is_zero_approx()
 
     if fire_on_button:
-        if Input.is_action_just_pressed(&"fire"): start_firing()
-        elif Input.is_action_just_released(&"fire"): stop_firing()
+        if Input.is_action_pressed(&"fire"): start_firing()
+        else: stop_firing()
     else:
         if aim_zero: stop_firing()
         else: start_firing()

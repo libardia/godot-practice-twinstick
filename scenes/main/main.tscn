@@ -5,9 +5,62 @@
 [ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_7smn1"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_raeie"]
 [ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/stars.gd" id="5_blune"]
+[ext_resource type="Script" uid="uid://bngwxhmcho6qu" path="res://scripts/asteroid_spawner.gd" id="5_th5th"]
+[ext_resource type="PackedScene" uid="uid://c61by5jcptx6n" path="res://obj/enemies/asteroid/impl/asteroid_bb1.tscn" id="6_p8abn"]
+[ext_resource type="PackedScene" uid="uid://pjcwr2d4m5to" path="res://obj/enemies/asteroid/impl/asteroid_tb1.tscn" id="6_r1bmu"]
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="6_raeie"]
+[ext_resource type="PackedScene" uid="uid://dd3ldgf6yn87g" path="res://obj/enemies/asteroid/impl/asteroid_mb1.tscn" id="7_0bhws"]
+[ext_resource type="PackedScene" uid="uid://cno1ylvvj355e" path="res://obj/enemies/asteroid/impl/asteroid_tb2.tscn" id="7_6w6mm"]
+[ext_resource type="PackedScene" uid="uid://btw3dpou2sq25" path="res://obj/enemies/asteroid/impl/asteroid_sb1.tscn" id="7_7nlll"]
 [ext_resource type="Texture2D" uid="uid://c6drk2bvyg6co" path="res://assets/img/stars/star2.png" id="7_hxu8e"]
+[ext_resource type="PackedScene" uid="uid://cv1idgy47h60t" path="res://obj/enemies/asteroid/impl/asteroid_bb2.tscn" id="7_s17dp"]
+[ext_resource type="PackedScene" uid="uid://bplwcrg2x8n1t" path="res://obj/enemies/asteroid/impl/asteroid_bb3.tscn" id="8_37hlw"]
+[ext_resource type="PackedScene" uid="uid://dexe42awfoa1g" path="res://obj/enemies/asteroid/impl/asteroid_mb2.tscn" id="8_62atk"]
+[ext_resource type="PackedScene" uid="uid://00nfd3k7m5wd" path="res://obj/enemies/asteroid/impl/asteroid_sb2.tscn" id="8_ii537"]
 [ext_resource type="Texture2D" uid="uid://cme4x0a1qpqps" path="res://assets/img/stars/star3.png" id="8_nvumn"]
+[ext_resource type="PackedScene" uid="uid://okhev8dn1pgk" path="res://obj/enemies/asteroid/impl/asteroid_tg1.tscn" id="8_os81g"]
+[ext_resource type="PackedScene" uid="uid://cwqivny4go2tp" path="res://obj/enemies/asteroid/impl/asteroid_tg2.tscn" id="9_1k3ck"]
+[ext_resource type="PackedScene" uid="uid://baej8gojx5qnf" path="res://obj/enemies/asteroid/impl/asteroid_bb4.tscn" id="9_6llfj"]
+[ext_resource type="Texture2D" uid="uid://na623dmyegi" path="res://assets/img/asteroid/meteorBrown_big1.png" id="9_blune"]
+[ext_resource type="PackedScene" uid="uid://do2retkpq5vme" path="res://obj/enemies/asteroid/impl/asteroid_mg1.tscn" id="9_i7in8"]
+[ext_resource type="PackedScene" uid="uid://dslsfuadjq5yp" path="res://obj/enemies/asteroid/impl/asteroid_sg1.tscn" id="9_rofvo"]
+[ext_resource type="PackedScene" uid="uid://bo4jdm4brvaaf" path="res://obj/enemies/asteroid/impl/asteroid_bg1.tscn" id="10_0bhws"]
+[ext_resource type="PackedScene" uid="uid://bvhiqxrb4j50v" path="res://obj/enemies/asteroid/impl/asteroid_mg2.tscn" id="10_gkmcc"]
+[ext_resource type="PackedScene" uid="uid://bwscdgi62eda2" path="res://obj/enemies/asteroid/impl/asteroid_sg2.tscn" id="10_tbnf8"]
+[ext_resource type="Texture2D" uid="uid://diid6mkbumxyx" path="res://assets/img/asteroid/meteorBrown_big2.png" id="10_th5th"]
+[ext_resource type="Texture2D" uid="uid://btx7fwd8r4xl0" path="res://assets/img/asteroid/meteorBrown_big4.png" id="11_7smn1"]
+[ext_resource type="PackedScene" uid="uid://cnxc4mlp75r2f" path="res://obj/enemies/asteroid/impl/asteroid_bg2.tscn" id="11_62atk"]
+[ext_resource type="PackedScene" uid="uid://btgwhlyo45rlm" path="res://obj/enemies/asteroid/impl/asteroid_bg3.tscn" id="12_i7in8"]
+[ext_resource type="Texture2D" uid="uid://da5agedqdtpxo" path="res://assets/img/asteroid/meteorBrown_big3.png" id="12_raeie"]
+[ext_resource type="PackedScene" uid="uid://b1bg4bunqhumj" path="res://obj/enemies/asteroid/impl/asteroid_bg4.tscn" id="13_gkmcc"]
+[ext_resource type="Script" uid="uid://chyhle7q0lunh" path="res://addons/commons/resources/random_resource.gd" id="14_7nlll"]
+[ext_resource type="Script" uid="uid://bxgf51nk6c5at" path="res://addons/commons/resources/weighted_random_resource.gd" id="15_ii537"]
+
+[sub_resource type="Resource" id="Resource_7nlll"]
+script = ExtResource("14_7nlll")
+choices = Array[Resource]([ExtResource("6_r1bmu"), ExtResource("7_6w6mm"), ExtResource("8_os81g"), ExtResource("9_1k3ck")])
+metadata/_custom_type_script = "uid://chyhle7q0lunh"
+
+[sub_resource type="Resource" id="Resource_ii537"]
+script = ExtResource("14_7nlll")
+choices = Array[Resource]([ExtResource("7_7nlll"), ExtResource("8_ii537"), ExtResource("9_rofvo"), ExtResource("10_tbnf8")])
+metadata/_custom_type_script = "uid://chyhle7q0lunh"
+
+[sub_resource type="Resource" id="Resource_r1bmu"]
+script = ExtResource("14_7nlll")
+choices = Array[Resource]([ExtResource("7_0bhws"), ExtResource("8_62atk"), ExtResource("9_i7in8"), ExtResource("10_gkmcc")])
+metadata/_custom_type_script = "uid://chyhle7q0lunh"
+
+[sub_resource type="Resource" id="Resource_rofvo"]
+script = ExtResource("14_7nlll")
+choices = Array[Resource]([ExtResource("6_p8abn"), ExtResource("7_s17dp"), ExtResource("8_37hlw"), ExtResource("9_6llfj"), ExtResource("10_0bhws"), ExtResource("11_62atk"), ExtResource("12_i7in8"), ExtResource("13_gkmcc")])
+metadata/_custom_type_script = "uid://chyhle7q0lunh"
+
+[sub_resource type="Resource" id="Resource_tbnf8"]
+script = ExtResource("15_ii537")
+weights = Array[float]([0.1, 0.5, 2.0, 4.0])
+choices = Array[Resource]([SubResource("Resource_7nlll"), SubResource("Resource_ii537"), SubResource("Resource_r1bmu"), SubResource("Resource_rofvo")])
+metadata/_custom_type_script = "uid://bxgf51nk6c5at"
 
 [node name="Main" type="Node2D" unique_id=1026637475]
 script = ExtResource("1_raeie")
@@ -22,6 +75,11 @@ controller_cursor_mode = 1
 z_index = 1
 rotation = -1.5707964
 
+[node name="AsteroidSpawner" type="Node2D" parent="." unique_id=883326265]
+script = ExtResource("5_th5th")
+spawns = SubResource("Resource_tbnf8")
+metadata/_custom_type_script = "uid://bngwxhmcho6qu"
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747640961]
 z_index = -10
 scroll_scale = Vector2(0.2, 0.2)
@@ -31,3 +89,19 @@ script = ExtResource("5_blune")
 stars_textures = Array[Texture2D]([ExtResource("6_raeie"), ExtResource("7_hxu8e"), ExtResource("8_nvumn")])
 stars_modulate = Color(0.5176471, 0.5176471, 0.5176471, 0.6745098)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
+
+[node name="MeteorBrownBig1" type="Sprite2D" parent="." unique_id=2133312152]
+position = Vector2(-253, 117)
+texture = ExtResource("9_blune")
+
+[node name="MeteorBrownBig2" type="Sprite2D" parent="." unique_id=23087071]
+position = Vector2(282, 189)
+texture = ExtResource("10_th5th")
+
+[node name="MeteorBrownBig4" type="Sprite2D" parent="." unique_id=1907644239]
+position = Vector2(-181, -239)
+texture = ExtResource("11_7smn1")
+
+[node name="MeteorBrownBig3" type="Sprite2D" parent="." unique_id=600281754]
+position = Vector2(140, -360)
+texture = ExtResource("12_raeie")

@@ -23,16 +23,15 @@ config/icon="uid://c14wjt4xvjqdr"
 [autoload]
 
 Log="*uid://dosdhhurn4dxp"
+InputDetector="*uid://c2qsh6370ql0"
 Settings="*uid://baru1u2vqkfde"
 BulletManager="*uid://cg67t1iw6vgvj"
-NodeUtil="*uid://dnnnkoerexadk"
 DebugQuit="*uid://dfe0sanoxr30"
-InputDetector="*uid://c2qsh6370ql0"
 
 [display]
 
 window/size/mode=3
-window/size/mode.editor=3
+window/size/mode.editor=0
 
 [dotnet]
 

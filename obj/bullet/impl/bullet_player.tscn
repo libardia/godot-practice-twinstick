@@ -13,9 +13,6 @@ position = Vector2(20, 0)
 rotation = 1.5707964
 texture = ExtResource("2_sdpjq")
 
-[node name="Area2D" parent="." index="2" unique_id=1841136345]
-position = Vector2(20, 0)
-
-[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=209751782]
+[node name="CollisionShape2D" parent="OwnedArea2D" parent_id_path=PackedInt32Array(623163640) index="0" unique_id=209751782]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_sdpjq")

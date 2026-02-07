@@ -27,16 +27,13 @@ rotation_aim_by_rotation = true
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
 unique_name_in_owner = true
+process_callback = 0
 wait_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2104907668]
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
-
-[node name="ShipSprite" type="Sprite2D" parent="." unique_id=1578912861]
-rotation = 1.5707964
-texture = ExtResource("2_xopso")
 
 [node name="Turrets" type="Node2D" parent="." unique_id=2123766699]
 unique_name_in_owner = true
@@ -48,6 +45,10 @@ bullet_scene = ExtResource("4_hle3s")
 [node name="TurretBasic2" parent="Turrets" unique_id=1135450059 instance=ExtResource("3_rhfbe")]
 position = Vector2(-2, -19)
 bullet_scene = ExtResource("4_hle3s")
+
+[node name="ShipSprite" type="Sprite2D" parent="." unique_id=1578912861]
+rotation = 1.5707964
+texture = ExtResource("2_xopso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706966364]
 position = Vector2(-11.630001, 0)
