@@ -6,13 +6,13 @@ extends Node2D
 @export_group("Stars", "stars_")
 @export var stars_textures: Array[Texture2D] = []
 @export var stars_modulate: Color = Color.WHITE
-@export_custom(PROPERTY_HINT_NONE, "suffix:%") var stars_min_scale := 0.25
-@export_custom(PROPERTY_HINT_NONE, "suffix:%") var stars_max_scale := 0.75
+@export_custom(PROPERTY_HINT_NONE, "suffix:%") var stars_min_scale: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:%") var stars_max_scale: float
 @export_group("Generation")
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:px") var chunk_size := 1024.0
-@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:chunks") var deload_distance := 10.0
-@export var star_density := 40
-@export var debug := false
+@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:px") var chunk_size: float
+@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:chunks") var deload_distance: float
+@export_custom(PROPERTY_HINT_ARRAY_TYPE, "suffix:stars/chunk") var star_density: int
+@export var debug: bool = false
 
 var seen_rect: Rect2
 var chunks: Dictionary[Vector2i, StarChunk] = {}
