@@ -21,17 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://okhev8dn1pgk" path="res://obj/enemies/asteroid/impl/asteroid_tg1.tscn" id="8_os81g"]
 [ext_resource type="PackedScene" uid="uid://cwqivny4go2tp" path="res://obj/enemies/asteroid/impl/asteroid_tg2.tscn" id="9_1k3ck"]
 [ext_resource type="PackedScene" uid="uid://baej8gojx5qnf" path="res://obj/enemies/asteroid/impl/asteroid_bb4.tscn" id="9_6llfj"]
-[ext_resource type="Texture2D" uid="uid://na623dmyegi" path="res://assets/img/asteroid/meteorBrown_big1.png" id="9_blune"]
 [ext_resource type="PackedScene" uid="uid://do2retkpq5vme" path="res://obj/enemies/asteroid/impl/asteroid_mg1.tscn" id="9_i7in8"]
 [ext_resource type="PackedScene" uid="uid://dslsfuadjq5yp" path="res://obj/enemies/asteroid/impl/asteroid_sg1.tscn" id="9_rofvo"]
 [ext_resource type="PackedScene" uid="uid://bo4jdm4brvaaf" path="res://obj/enemies/asteroid/impl/asteroid_bg1.tscn" id="10_0bhws"]
 [ext_resource type="PackedScene" uid="uid://bvhiqxrb4j50v" path="res://obj/enemies/asteroid/impl/asteroid_mg2.tscn" id="10_gkmcc"]
 [ext_resource type="PackedScene" uid="uid://bwscdgi62eda2" path="res://obj/enemies/asteroid/impl/asteroid_sg2.tscn" id="10_tbnf8"]
-[ext_resource type="Texture2D" uid="uid://diid6mkbumxyx" path="res://assets/img/asteroid/meteorBrown_big2.png" id="10_th5th"]
-[ext_resource type="Texture2D" uid="uid://btx7fwd8r4xl0" path="res://assets/img/asteroid/meteorBrown_big4.png" id="11_7smn1"]
 [ext_resource type="PackedScene" uid="uid://cnxc4mlp75r2f" path="res://obj/enemies/asteroid/impl/asteroid_bg2.tscn" id="11_62atk"]
 [ext_resource type="PackedScene" uid="uid://btgwhlyo45rlm" path="res://obj/enemies/asteroid/impl/asteroid_bg3.tscn" id="12_i7in8"]
-[ext_resource type="Texture2D" uid="uid://da5agedqdtpxo" path="res://assets/img/asteroid/meteorBrown_big3.png" id="12_raeie"]
 [ext_resource type="PackedScene" uid="uid://b1bg4bunqhumj" path="res://obj/enemies/asteroid/impl/asteroid_bg4.tscn" id="13_gkmcc"]
 [ext_resource type="Script" uid="uid://chyhle7q0lunh" path="res://addons/commons/resources/random_resource.gd" id="14_7nlll"]
 [ext_resource type="Script" uid="uid://bxgf51nk6c5at" path="res://addons/commons/resources/weighted_random_resource.gd" id="15_ii537"]
@@ -58,7 +54,7 @@ metadata/_custom_type_script = "uid://chyhle7q0lunh"
 
 [sub_resource type="Resource" id="Resource_tbnf8"]
 script = ExtResource("15_ii537")
-weights = Array[float]([0.1, 0.5, 2.0, 4.0])
+weights = Array[float]([0.1, 0.5, 2.0, 4.0, 0.0])
 choices = Array[Resource]([SubResource("Resource_7nlll"), SubResource("Resource_ii537"), SubResource("Resource_r1bmu"), SubResource("Resource_rofvo")])
 metadata/_custom_type_script = "uid://bxgf51nk6c5at"
 
@@ -94,19 +90,3 @@ script = ExtResource("5_blune")
 stars_textures = Array[Texture2D]([ExtResource("6_raeie"), ExtResource("7_hxu8e"), ExtResource("8_nvumn")])
 stars_modulate = Color(0.5176471, 0.5176471, 0.5176471, 0.6745098)
 metadata/_custom_type_script = "uid://davqcsxn32c3l"
-
-[node name="MeteorBrownBig1" type="Sprite2D" parent="." unique_id=2133312152]
-position = Vector2(-253, 117)
-texture = ExtResource("9_blune")
-
-[node name="MeteorBrownBig2" type="Sprite2D" parent="." unique_id=23087071]
-position = Vector2(282, 189)
-texture = ExtResource("10_th5th")
-
-[node name="MeteorBrownBig4" type="Sprite2D" parent="." unique_id=1907644239]
-position = Vector2(-181, -239)
-texture = ExtResource("11_7smn1")
-
-[node name="MeteorBrownBig3" type="Sprite2D" parent="." unique_id=600281754]
-position = Vector2(140, -360)
-texture = ExtResource("12_raeie")

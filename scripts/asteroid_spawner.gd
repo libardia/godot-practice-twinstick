@@ -11,10 +11,6 @@ extends Node2D
 @export var init_angular_max: float
 
 
-func _ready() -> void:
-    spawn(Vector2.ONE * 100)
-
-
 func spawn(at: Vector2):
     var ast: Asteroid = (spawns.choose() as PackedScene).instantiate()
     ast.global_position = at
