@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://chyhle7q0lunh"
 
 [sub_resource type="Resource" id="Resource_tbnf8"]
 script = ExtResource("15_ii537")
-weights = Array[float]([0.1, 0.5, 2.0, 4.0, 0.0])
+weights = Array[float]([0.1, 0.5, 2.0, 4.0])
 choices = Array[Resource]([SubResource("Resource_7nlll"), SubResource("Resource_ii537"), SubResource("Resource_r1bmu"), SubResource("Resource_rofvo")])
 metadata/_custom_type_script = "uid://bxgf51nk6c5at"
 
