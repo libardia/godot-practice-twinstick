@@ -24,7 +24,7 @@ func setup(base: Stars, coords: Vector2i):
         var sprite = Sprite2D.new()
         sprite.texture = base.stars_textures[rng.randi() % base.stars_textures.size()]
         sprite.modulate = base.stars_modulate
-        var size = lerpf(base.stars_min_scale, base.stars_max_scale, rng.randf())
+        var size = rng.randf_range(base.stars_min_scale, base.stars_max_scale)
         sprite.scale = Vector2(size, size)
         sprite.position.x = rng.randf() * base.chunk_size
         sprite.position.y = rng.randf() * base.chunk_size

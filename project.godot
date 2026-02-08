@@ -27,6 +27,7 @@ InputDetector="*uid://c2qsh6370ql0"
 Settings="*uid://baru1u2vqkfde"
 BulletManager="*uid://cg67t1iw6vgvj"
 DebugQuit="*uid://dfe0sanoxr30"
+GlobalData="*uid://5fos10bb8ox5"
 
 [display]
 
@@ -40,10 +41,6 @@ project/assembly_name="Practice Twinstick"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/logger/plugin.cfg")
-
-[global_group]
-
-asteroid=""
 
 [input]
 

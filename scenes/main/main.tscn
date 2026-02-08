@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://6q2pvfruvvdc" path="res://scenes/main/adaptive_cursor.gd" id="1_th5th"]
 [ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_7smn1"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_raeie"]
-[ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/stars.gd" id="5_blune"]
-[ext_resource type="Script" uid="uid://bngwxhmcho6qu" path="res://scripts/asteroid_spawner.gd" id="5_th5th"]
+[ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/nodes/stars.gd" id="5_blune"]
+[ext_resource type="Script" uid="uid://bngwxhmcho6qu" path="res://scripts/nodes/asteroid_spawner.gd" id="5_th5th"]
 [ext_resource type="PackedScene" uid="uid://c61by5jcptx6n" path="res://obj/enemies/asteroid/impl/asteroid_bb1.tscn" id="6_p8abn"]
 [ext_resource type="PackedScene" uid="uid://pjcwr2d4m5to" path="res://obj/enemies/asteroid/impl/asteroid_tb1.tscn" id="6_r1bmu"]
 [ext_resource type="Texture2D" uid="uid://dgkv6vvwmaglv" path="res://assets/img/stars/star1.png" id="6_raeie"]
@@ -70,15 +70,21 @@ controller_cursor_mode = 1
 [node name="Player" parent="." unique_id=1861245870 instance=ExtResource("3_raeie")]
 z_index = 1
 rotation = -1.5707964
+can_sleep = false
 bullet_project_velocity = false
 
 [node name="AsteroidSpawner" type="Node2D" parent="." unique_id=883326265]
 script = ExtResource("5_th5th")
 spawns = SubResource("Resource_tbnf8")
+frequency = 5.0
+spawn_density = 1.0
+spawn_radius = 500.0
+despawn_buffer = 500.0
+screen_buffer = 100.0
 init_speed_min = 25.0
 init_speed_max = 50.0
-init_angular_min = 0.2
-init_angular_max = 0.5
+init_angular_min = 10.0
+init_angular_max = 25.0
 metadata/_custom_type_script = "uid://bngwxhmcho6qu"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1747640961]
