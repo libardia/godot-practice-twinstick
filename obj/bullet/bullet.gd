@@ -1,5 +1,5 @@
 class_name Bullet
-extends Node2D
+extends Area2D
 
 
 var velocity: Vector2

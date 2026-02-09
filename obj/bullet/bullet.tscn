@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://c3jpn5qdcaode"]
 
 [ext_resource type="Script" uid="uid://cvsu86mtu4wj" path="res://obj/bullet/bullet.gd" id="1_eb0oy"]
-[ext_resource type="Script" uid="uid://dpjl8vnikkk1g" path="res://addons/commons/nodes/owned_area_2d.gd" id="2_eb0oy"]
 
-[node name="Bullet" type="Node2D" unique_id=1200226700]
+[node name="Bullet" type="Area2D" unique_id=1726358687]
 script = ExtResource("1_eb0oy")
 
 [node name="Lifetime" type="Timer" parent="." unique_id=2007843289]
@@ -13,11 +12,6 @@ autostart = true
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1032581405]
 
-[node name="OwnedArea2D" type="Area2D" parent="." unique_id=623163640 node_paths=PackedStringArray("owned_by")]
-script = ExtResource("2_eb0oy")
-owned_by = NodePath("..")
-metadata/_custom_type_script = "uid://dpjl8vnikkk1g"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OwnedArea2D" unique_id=209751782]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209751782]
 
 [connection signal="timeout" from="Lifetime" to="." method="queue_free"]
