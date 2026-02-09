@@ -2,6 +2,8 @@ class_name AsteroidSpawner
 extends Node2D
 
 
+const GROUP_SPAWNED_ASTEROID := &"spawned_asteroid"
+
 @export_group("Spawn Settings")
 @export var spawns: RandomResource
 @export_custom(PROPERTY_HINT_NONE, "suffix:hz") var frequency: float
@@ -30,7 +32,7 @@ func spawn_tick():
     var outer = inner + spawn_radius
     var despawn = outer + despawn_buffer
     var total_amount = _calc_spawn_amount(inner, outer)
-    var asteroids = get_tree().get_nodes_in_group(Asteroid.GROUP_ASTEROIDS)
+    var asteroids = get_tree().get_nodes_in_group(GROUP_SPAWNED_ASTEROID)
     var spawn_amount = total_amount - asteroids.size()
     for ast: Asteroid in asteroids:
         var dist_sq = GlobalData.player.global_position.distance_squared_to(ast.global_position)
@@ -56,6 +58,7 @@ func spawn(at: Vector2):
     ast.angular_velocity = deg_to_rad(ang) * [-1, 1].pick_random()
 
     add_child(ast)
+    ast.add_to_group(GROUP_SPAWNED_ASTEROID)
 
 
 func _calc_spawn_amount(inner, outer) -> int:

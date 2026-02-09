@@ -2,19 +2,34 @@ class_name HealthComponent
 extends Component
 
 
-const GROUP_HAS_HEALTH := &"has_health"
+const GROUP_HAS_COMPONENT := &"has_health_component"
 
 signal health_depleted
+signal changed(amount: float, before: float)
 
+## The health this entity currently has.
 @export var current_health: float
+## The maximum health of this entity. If [member capped] is [code]true[/code],
+## [member current_health] will be clamped to this value.
 @export var max_health: float
-@export var capped: bool
-@export var free_when_depleted: bool
+## If [memner current_health] should be capped at [member max_health]. When [code]true[/code],
+## [member current_health] is clamped to [member max_health].
+@export var capped: bool = false
+## When [code]true[/code], the health of this entity cannot be changed.
+@export var locked: bool = false
+@export_group("When Depleted", "when_depleted_")
+## If this entity should automatically lock when depleted for the first time, preventing changes.
+## If necessary, the health can be unlocked by setting [member locked] to [code]false[/code].
+@export var when_depleted_lock: bool = true
+## If this entity should be freed when health is depleted. Specifically,
+## [code]belongs_to.queue_free()[/code] will be called.
+@export var when_depleted_free_owner: bool = false
+
 
 
 func _enter_tree() -> void:
     super._enter_tree()
-    belongs_to.add_to_group(GROUP_HAS_HEALTH)
+    belongs_to.add_to_group(GROUP_HAS_COMPONENT)
 
 
 func damage(amount: float):
@@ -26,10 +41,15 @@ func heal(amount: float):
 
 
 func adjust(amount: float):
-    current_health += amount
-    if capped and current_health > max_health:
-        current_health = max_health
-    if current_health <= 0:
-        health_depleted.emit()
-        if free_when_depleted:
-            belongs_to.queue_free()
+    if not locked:
+        var before = current_health
+        current_health += amount
+        if capped and current_health > max_health:
+            current_health = max_health
+        changed.emit(amount, before)
+        if before > 0 and current_health <= 0:
+            if when_depleted_lock:
+                locked = true
+            health_depleted.emit()
+            if when_depleted_free_owner:
+                belongs_to.queue_free()

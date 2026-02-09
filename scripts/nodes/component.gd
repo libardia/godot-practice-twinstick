@@ -2,6 +2,7 @@
 extends Node
 
 
+## The entity this component belongs to.
 @export var belongs_to: Node
 
 
