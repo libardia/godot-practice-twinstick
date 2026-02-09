@@ -73,9 +73,19 @@ rotation = -1.5707964
 can_sleep = false
 bullet_project_velocity = false
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1355996417]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
 [node name="AsteroidSpawner" type="Node2D" parent="." unique_id=883326265]
 script = ExtResource("5_th5th")
 spawns = SubResource("Resource_tbnf8")
+frequency = 15.0
+spawn_density = 2.0
+spawn_radius = 500.0
+despawn_buffer = 100.0
+screen_buffer = 300.0
 init_speed_min = 25.0
 init_speed_max = 50.0
 init_angular_min = 10.0

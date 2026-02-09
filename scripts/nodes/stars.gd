@@ -29,12 +29,12 @@ func _process(_delta: float) -> void:
     else:
         var cam = get_viewport().get_camera_2d()
         if cam != null:
-            seen_rect.position = cam.global_position - half_size
+            seen_rect.position = cam.get_screen_center_position() - half_size
 
-    var seen_chunks = Rect2i(
-        floor(seen_rect.position / chunk_size),
-        ceil(seen_rect.size / chunk_size) + Vector2.ONE
-    )
+    var seen_chunks = Rect2i()
+    seen_chunks.position = Vector2i((seen_rect.position / chunk_size).floor()) - Vector2i.ONE
+    seen_chunks.end = Vector2i((seen_rect.end / chunk_size).ceil()) + Vector2i.ONE
+
     var seen_center = seen_rect.get_center() / chunk_size
 
     # abort if the whole seen area is bigger than deload distance

@@ -29,11 +29,6 @@ unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.2
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2104907668]
-process_callback = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
-
 [node name="Turrets" type="Node2D" parent="." unique_id=2123766699]
 unique_name_in_owner = true
 
