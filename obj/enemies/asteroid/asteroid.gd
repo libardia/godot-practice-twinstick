@@ -4,7 +4,6 @@ extends RigidBody2D
 
 enum Type { BROWN, GRAY }
 
-
 const GROUP_ASTEROIDS := &"asteroids"
 
 static var instances: Dictionary = {
@@ -25,6 +24,13 @@ static var instances: Dictionary = {
 @export var size: int
 @export var base_mass: float = 1
 @export var type: Type
+@export_group("Initial State on Splitting", "split_")
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var split_min_speed: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var split_max_speed: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:°") var split_angle_variation: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_min_angular: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_max_angular: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:px") var split_separation: float
 
 @onready var health_component: HealthComponent = %HealthComponent
 
@@ -42,12 +48,30 @@ func _ready() -> void:
 func die() -> void:
     if size > 0:
         var rand: RandomResource = instances[type][size-1]
-        var ast1: Asteroid = rand.choose().instantiate()
-        var ast2: Asteroid = rand.choose().instantiate()
-        ast1.global_position = global_position
-        ast2.global_position = global_position
+        var ast1 = make_part(rand.choose(), 1)
+        var ast2 = make_part(rand.choose(), -1)
         get_parent().add_child.call_deferred(ast1)
         get_parent().add_child.call_deferred(ast2)
+        ast1.add_collision_exception_with(ast2)
         if is_in_group(AsteroidSpawner.GROUP_SPAWNED_ASTEROID):
             ast1.add_to_group.call_deferred(AsteroidSpawner.GROUP_SPAWNED_ASTEROID)
     queue_free()
+
+
+func make_part(scene: PackedScene, dir_factor: float) -> Asteroid:
+    var ast: Asteroid = scene.instantiate()
+
+    # Set initial velocity
+    var half_vary = deg_to_rad(split_angle_variation / 2)
+    var dir_rotation = PI + randf_range(-half_vary, half_vary)
+    var split_dir = linear_velocity.normalized().rotated(dir_rotation) * dir_factor
+    ast.linear_velocity = linear_velocity
+    ast.linear_velocity += split_dir * randf_range(split_min_speed, split_min_speed)
+
+    # Set initial angular velocity
+    var split_ang_dir = [1, -1].pick_random()
+    ast.angular_velocity = split_ang_dir * randf_range(split_min_angular, split_max_angular)
+
+    ast.global_position = global_position + split_dir * split_separation
+
+    return ast
