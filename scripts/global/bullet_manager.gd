@@ -12,5 +12,4 @@ func fire(scene: PackedScene, init_xform: Transform2D, velocity: Vector2):
     var bullet: Bullet = scene.instantiate()
     bullet.velocity = velocity
     bullet.global_transform = init_xform
-    #bullet.visible = false
     bullet_container.add_child(bullet)

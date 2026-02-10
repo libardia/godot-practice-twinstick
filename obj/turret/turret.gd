@@ -31,7 +31,7 @@ func aim(direction: Vector2):
 func fire(extra_velocity: Vector2 = Vector2.ZERO):
     for point in fire_points:
         var fire_xform = point.global_transform
-        var bullet_vel = extra_velocity + fire_xform.x * bullet_speed
+        var bullet_vel = extra_velocity + (fire_xform.x * bullet_speed)
         BulletManager.fire(bullet_scene, fire_xform, bullet_vel)
 
 

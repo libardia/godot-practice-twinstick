@@ -34,6 +34,11 @@ func _enter_tree() -> void:
     mass = base_mass * pow(2, size)
 
 
+func _ready() -> void:
+    health_component.max_health /= pow(2, 3-size)
+    health_component.current_health = health_component.max_health
+
+
 func die() -> void:
     if size > 0:
         var rand: RandomResource = instances[type][size-1]

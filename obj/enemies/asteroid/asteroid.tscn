@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroid/asteroid.gd" id="1_pcuo8"]
 [ext_resource type="Script" uid="uid://dfliux2w8l2hx" path="res://addons/commons/nodes/extended_collision_polygon_2d.gd" id="2_ix00t"]
-[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://scripts/nodes/health_component.gd" id="2_ymtp8"]
+[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://scripts/nodes/components/health_component.gd" id="2_ymtp8"]
 
 [node name="Asteroid" type="RigidBody2D" unique_id=1515242791]
 collision_layer = 2
@@ -13,8 +13,8 @@ base_mass = 10.0
 [node name="HealthComponent" type="Node" parent="." unique_id=1892515207]
 unique_name_in_owner = true
 script = ExtResource("2_ymtp8")
-current_health = 100.0
-max_health = 100.0
+current_health = 50.0
+max_health = 50.0
 metadata/_custom_type_script = "uid://dhm1qhgql57tp"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
