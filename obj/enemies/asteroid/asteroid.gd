@@ -27,7 +27,6 @@ static var instances: Dictionary = {
 @export_group("Initial State on Splitting", "split_")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var split_min_speed: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var split_max_speed: float
-@export_custom(PROPERTY_HINT_NONE, "suffix:°") var split_angle_variation: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_min_angular: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_max_angular: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px") var split_separation: float
@@ -62,16 +61,15 @@ func make_part(scene: PackedScene, dir_factor: float) -> Asteroid:
     var ast: Asteroid = scene.instantiate()
 
     # Set initial velocity
-    var half_vary = deg_to_rad(split_angle_variation / 2)
-    var dir_rotation = PI + randf_range(-half_vary, half_vary)
-    var split_dir = linear_velocity.normalized().rotated(dir_rotation) * dir_factor
+    var split_dir = linear_velocity.normalized().orthogonal() * dir_factor
     ast.linear_velocity = linear_velocity
-    ast.linear_velocity += split_dir * randf_range(split_min_speed, split_min_speed)
+    ast.linear_velocity += split_dir * randf_range(split_min_speed, split_max_speed)
 
     # Set initial angular velocity
     var split_ang_dir = [1, -1].pick_random()
     ast.angular_velocity = split_ang_dir * randf_range(split_min_angular, split_max_angular)
 
+    # Starting position
     ast.global_position = global_position + split_dir * split_separation
 
     return ast

@@ -2,6 +2,7 @@ class_name Bullet
 extends Area2D
 
 
+@export var hit_force: float
 @export var power: float
 
 var velocity: Vector2
@@ -29,4 +30,9 @@ func _on_collide(node: Node2D):
         collided_this_frame = true
         if node.is_in_group(HealthComponent.GROUP_HAS_COMPONENT):
             node.health_component.damage(power)
+        if node is RigidBody2D:
+            node.apply_impulse(
+                velocity.normalized() * hit_force,
+                global_position - node.global_position
+            )
         queue_free()
