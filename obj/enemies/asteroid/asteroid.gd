@@ -42,14 +42,16 @@ func _enter_tree() -> void:
 func _ready() -> void:
     health_component.max_health /= pow(2, 3-size)
     health_component.current_health = health_component.max_health
+    unique_name_in_owner = true
 
 
 func die() -> void:
     if size > 0:
         var rand: RandomResource = instances[type][size-1]
-        var ast1 = make_part(rand.choose(), 1)
-        var ast2 = make_part(rand.choose(), -1)
+        var dir = linear_velocity.normalized().orthogonal()
+        var ast1 = make_part(rand.choose(), dir)
         get_parent().add_child.call_deferred(ast1)
+        var ast2 = make_part(rand.choose(), -dir)
         get_parent().add_child.call_deferred(ast2)
         ast1.add_collision_exception_with(ast2)
         if is_in_group(AsteroidSpawner.GROUP_SPAWNED_ASTEROID):
@@ -57,19 +59,18 @@ func die() -> void:
     queue_free()
 
 
-func make_part(scene: PackedScene, dir_factor: float) -> Asteroid:
+func make_part(scene: PackedScene, dir: Vector2) -> Asteroid:
     var ast: Asteroid = scene.instantiate()
 
     # Set initial velocity
-    var split_dir = linear_velocity.normalized().orthogonal() * dir_factor
     ast.linear_velocity = linear_velocity
-    ast.linear_velocity += split_dir * randf_range(split_min_speed, split_max_speed)
+    ast.linear_velocity += dir * randf_range(split_min_speed, split_max_speed)
 
     # Set initial angular velocity
     var split_ang_dir = [1, -1].pick_random()
     ast.angular_velocity = split_ang_dir * randf_range(split_min_angular, split_max_angular)
 
     # Starting position
-    ast.global_position = global_position + split_dir * split_separation
+    ast.global_position = global_position + dir * split_separation
 
     return ast

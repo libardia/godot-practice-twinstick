@@ -7,5 +7,6 @@ extends Node
 
 
 func _enter_tree() -> void:
+    unique_name_in_owner = true
     if not belongs_to:
         belongs_to = get_parent()

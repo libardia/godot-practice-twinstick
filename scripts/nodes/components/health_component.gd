@@ -3,6 +3,7 @@ extends Component
 
 
 const GROUP_HAS_COMPONENT := &"has_health_component"
+const UNIQUE_NAME := ^"%HealthComponent"
 
 signal health_depleted
 signal changed(amount: float, before: float)

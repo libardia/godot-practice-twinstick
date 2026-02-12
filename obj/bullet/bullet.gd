@@ -29,7 +29,7 @@ func _on_collide(node: Node2D):
     if not collided_this_frame:
         collided_this_frame = true
         if node.is_in_group(HealthComponent.GROUP_HAS_COMPONENT):
-            node.health_component.damage(power)
+            node.get_node(HealthComponent.UNIQUE_NAME).damage(power)
         if node is RigidBody2D:
             node.apply_impulse(
                 velocity.normalized() * hit_force,
