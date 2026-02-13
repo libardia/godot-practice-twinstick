@@ -2,7 +2,6 @@ class_name HealthComponent
 extends Component
 
 
-const GROUP_HAS_COMPONENT := &"has_health_component"
 const UNIQUE_NAME := ^"%HealthComponent"
 
 signal health_depleted
@@ -26,11 +25,6 @@ signal changed(amount: float, before: float)
 ## [code]belongs_to.queue_free()[/code] will be called.
 @export var when_depleted_free_owner: bool = false
 
-
-
-func _enter_tree() -> void:
-    super._enter_tree()
-    belongs_to.add_to_group(GROUP_HAS_COMPONENT)
 
 
 func damage(amount: float):

@@ -15,7 +15,6 @@ extends RigidBody2D
 
 @onready var fire_cooldown: Timer = %FireCooldown
 @onready var turrets: Array[Turret]
-@onready var health_component: HealthComponent = %HealthComponent
 
 var move_force: float
 var drag_coeff: float
