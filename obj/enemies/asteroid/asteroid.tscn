@@ -7,10 +7,10 @@
 [node name="Asteroid" type="RigidBody2D" unique_id=1515242791]
 collision_layer = 2
 collision_mask = 15
+mass = 10.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_pcuo8")
-base_mass = 10.0
 split_min_speed = 25.0
 split_max_speed = 50.0
 split_min_angular = 5.0

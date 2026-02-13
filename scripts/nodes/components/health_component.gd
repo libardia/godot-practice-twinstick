@@ -26,7 +26,6 @@ signal changed(amount: float, before: float)
 @export var when_depleted_free_owner: bool = false
 
 
-
 func damage(amount: float):
     adjust(-amount)
 

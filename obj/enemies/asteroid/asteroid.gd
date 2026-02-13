@@ -22,7 +22,6 @@ static var instances: Dictionary = {
 }
 
 @export var size: int
-@export var base_mass: float = 1
 @export var type: Type
 @export_group("Initial State on Splitting", "split_")
 @export_custom(PROPERTY_HINT_NONE, "suffix:px/s") var split_min_speed: float
@@ -35,7 +34,7 @@ static var instances: Dictionary = {
 
 
 func _enter_tree() -> void:
-    mass = base_mass * pow(2, size)
+    mass *= pow(2, size)
 
 
 func _ready() -> void:
