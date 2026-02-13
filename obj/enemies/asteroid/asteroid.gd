@@ -31,18 +31,16 @@ static var instances: Dictionary = {
 @export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_max_angular: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px") var split_separation: float
 
-@onready var health_component: HealthComponent = %HealthComponent
+@onready var health: HealthComponent = %HealthComponent
 
 
 func _enter_tree() -> void:
-    add_to_group(GROUP_ASTEROIDS)
     mass = base_mass * pow(2, size)
 
 
 func _ready() -> void:
-    health_component.max_health /= pow(2, 3-size)
-    health_component.current_health = health_component.max_health
-    unique_name_in_owner = true
+    health.max_health /= pow(2, 3-size)
+    health.current_health = health.max_health
 
 
 func die() -> void:
