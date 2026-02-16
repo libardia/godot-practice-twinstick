@@ -21,17 +21,17 @@ func _ready() -> void:
     fire_points.assign(%FirePoints.get_children())
 
 
-func aim(direction: Vector2):
+func aim(direction: Vector2) -> void:
     if smooth_aim:
         target_angle = direction.angle()
     else:
         gun.global_rotation = direction.angle()
 
 
-func fire(extra_velocity: Vector2 = Vector2.ZERO):
+func fire(extra_velocity: Vector2 = Vector2.ZERO) -> void:
     for point in fire_points:
-        var fire_xform = point.global_transform
-        var bullet_vel = extra_velocity + (fire_xform.x * bullet_speed)
+        var fire_xform := point.global_transform
+        var bullet_vel := extra_velocity + (fire_xform.x * bullet_speed)
         BulletManager.fire(bullet_scene, fire_xform, bullet_vel)
 
 

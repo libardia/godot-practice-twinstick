@@ -26,17 +26,17 @@ signal changed(amount: float, before: float)
 @export var when_depleted_free_owner: bool = false
 
 
-func damage(amount: float):
+func damage(amount: float) -> void:
     adjust(-amount)
 
 
-func heal(amount: float):
+func heal(amount: float) -> void:
     adjust(amount)
 
 
-func adjust(amount: float):
+func adjust(amount: float) -> void:
     if not locked:
-        var before = current_health
+        var before := current_health
         current_health += amount
         if capped and current_health > max_health:
             current_health = max_health
@@ -47,3 +47,7 @@ func adjust(amount: float):
             health_depleted.emit()
             if when_depleted_free_owner:
                 belongs_to.queue_free()
+
+
+static func get_from(node: Node) -> HealthComponent:
+    return node.get_node_or_null(UNIQUE_NAME)

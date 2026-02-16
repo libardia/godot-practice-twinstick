@@ -21,21 +21,21 @@ var rng := RandomNumberGenerator.new()
 
 func _process(_delta: float) -> void:
     seen_rect = get_viewport_rect()
-    var half_size = seen_rect.size / 2.0
+    var half_size := seen_rect.size / 2.0
 
     if get_parent() is Parallax2D:
         # Special handling for parallax
         seen_rect.position = get_parent().screen_offset - get_parent().position
     else:
-        var cam = get_viewport().get_camera_2d()
+        var cam := get_viewport().get_camera_2d()
         if cam != null:
             seen_rect.position = cam.get_screen_center_position() - half_size
 
-    var seen_chunks = Rect2i()
+    var seen_chunks := Rect2i()
     seen_chunks.position = Vector2i((seen_rect.position / chunk_size).floor()) - Vector2i.ONE
     seen_chunks.end = Vector2i((seen_rect.end / chunk_size).ceil()) + Vector2i.ONE
 
-    var seen_center = seen_rect.get_center() / chunk_size
+    var seen_center := seen_rect.get_center() / chunk_size
 
     # abort if the whole seen area is bigger than deload distance
     if max(seen_chunks.size.x, seen_chunks.size.y) > deload_distance:
@@ -44,11 +44,11 @@ func _process(_delta: float) -> void:
     # make chunks if necessary
     for cx in range(seen_chunks.position.x, seen_chunks.end.x):
         for cy in range(seen_chunks.position.y, seen_chunks.end.y):
-            var chunk_coord = Vector2i(cx, cy)
+            var chunk_coord := Vector2i(cx, cy)
             if not chunks.has(chunk_coord):
                 if debug:
                     print("Stars: make chunk at ", chunk_coord)
-                var chunk = StarChunk.new()
+                var chunk := StarChunk.new()
                 chunk.setup(self, chunk_coord)
                 add_child(chunk)
                 chunks[chunk_coord] = chunk
@@ -58,6 +58,6 @@ func _process(_delta: float) -> void:
         if seen_center.distance_squared_to(chunk_coord) > deload_distance ** 2:
             if debug:
                 print("Stars: destroy chunk at ", chunk_coord)
-            var chunk = chunks[chunk_coord]
+            var chunk := chunks[chunk_coord]
             chunks.erase(chunk_coord)
             chunk.queue_free()

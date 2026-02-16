@@ -45,10 +45,10 @@ func _ready() -> void:
 func die() -> void:
     if size > 0:
         var rand: RandomResource = instances[type][size-1]
-        var dir = linear_velocity.normalized().orthogonal()
-        var ast1 = make_part(rand.choose(), dir)
+        var dir := linear_velocity.normalized().orthogonal()
+        var ast1 := make_part(rand.choose(), dir)
         get_parent().add_child.call_deferred(ast1)
-        var ast2 = make_part(rand.choose(), -dir)
+        var ast2 := make_part(rand.choose(), -dir)
         get_parent().add_child.call_deferred(ast2)
         ast1.add_collision_exception_with(ast2)
         if is_in_group(AsteroidSpawner.GROUP_SPAWNED_ASTEROID):
@@ -64,7 +64,7 @@ func make_part(scene: PackedScene, dir: Vector2) -> Asteroid:
     ast.linear_velocity += dir * randf_range(split_min_speed, split_max_speed)
 
     # Set initial angular velocity
-    var split_ang_dir = [1, -1].pick_random()
+    var split_ang_dir := [1, -1].pick_random() as float
     ast.angular_velocity = split_ang_dir * randf_range(split_min_angular, split_max_angular)
 
     # Starting position

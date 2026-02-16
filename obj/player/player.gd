@@ -30,18 +30,18 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-    var move_dir = Input.get_vector(&"move left", &"move right", &"move up", &"move down")
+    var move_dir := Input.get_vector(&"move left", &"move right", &"move up", &"move down")
 
-    var should_mouse_aim = InputDetector.is_mkb() and Settings.mouse_aim
-    var fire_on_button = should_mouse_aim or Settings.separate_fire_button
+    var should_mouse_aim := InputDetector.is_mkb() and Settings.mouse_aim
+    var fire_on_button := should_mouse_aim or Settings.separate_fire_button
 
     if should_mouse_aim:
         aim_dir = position.direction_to(get_global_mouse_position())
     else:
         aim_dir = Input.get_vector(&"aim left", &"aim right", &"aim up", &"aim down")
 
-    var move_zero = move_dir.is_zero_approx()
-    var aim_zero = aim_dir.is_zero_approx()
+    var move_zero := move_dir.is_zero_approx()
+    var aim_zero := aim_dir.is_zero_approx()
 
     if fire_on_button:
         if Input.is_action_pressed(&"fire"): start_firing()
@@ -73,23 +73,23 @@ func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
     )
 
 
-func start_firing():
+func start_firing() -> void:
     if fire_cooldown.is_stopped():
         fire()
         fire_cooldown.start()
 
 
-func stop_firing():
+func stop_firing() -> void:
     if not fire_cooldown.is_stopped():
         fire_cooldown.stop()
 
 
-func aim_turrets(direction: Vector2):
+func aim_turrets(direction: Vector2) -> void:
     for t in turrets:
         t.aim(direction)
 
 
-func fire():
+func fire() -> void:
     for t in turrets:
         if bullet_include_velocity:
             if bullet_project_velocity:

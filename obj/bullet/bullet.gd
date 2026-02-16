@@ -25,11 +25,12 @@ func _physics_process(delta: float) -> void:
     position += velocity * delta
 
 
-func _on_collide(node: Node2D):
+func _on_collide(node: Node2D) -> void:
     if not collided_this_frame:
         collided_this_frame = true
-        if node.has_node(HealthComponent.UNIQUE_NAME):
-            node.get_node(HealthComponent.UNIQUE_NAME).damage(power)
+        var health := HealthComponent.get_from(node)
+        if health:
+            health.damage(power)
         if node is RigidBody2D:
             node.apply_impulse(
                 velocity.normalized() * hit_force,

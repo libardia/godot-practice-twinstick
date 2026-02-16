@@ -14,7 +14,7 @@ func _ready() -> void:
     InputDetector.source_changed.connect(on_source_changed)
 
 
-func on_source_changed():
+func on_source_changed() -> void:
     if InputDetector.is_mkb() and Settings.mouse_aim:
         Input.set_custom_mouse_cursor(cursor_img, Input.CURSOR_ARROW, hotspot)
         Input.mouse_mode = mkb_cursor_mode
