@@ -26,8 +26,6 @@ metadata/_custom_type_script = "uid://dhm1qhgql57tp"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
 
-[node name="ExtendedCollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
-script = ExtResource("2_ix00t")
-metadata/_custom_type_script = "uid://dfliux2w8l2hx"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
 
 [connection signal="health_depleted" from="HealthComponent" to="." method="die"]

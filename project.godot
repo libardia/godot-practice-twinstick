@@ -23,11 +23,11 @@ config/icon="uid://c14wjt4xvjqdr"
 [autoload]
 
 Log="*uid://dosdhhurn4dxp"
-InputDetector="*uid://c2qsh6370ql0"
 Settings="*uid://baru1u2vqkfde"
 BulletManager="*uid://cg67t1iw6vgvj"
 DebugQuit="*uid://dfe0sanoxr30"
 GlobalData="*uid://5fos10bb8ox5"
+InputDetector="*uid://c2qsh6370ql0"
 
 [debug]
 

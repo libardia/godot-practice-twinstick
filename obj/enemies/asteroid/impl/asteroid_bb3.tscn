@@ -9,6 +9,6 @@ size = 3
 [node name="Sprite" parent="." index="1" unique_id=1041657037]
 texture = ExtResource("2_p3w61")
 
-[node name="ExtendedCollisionPolygon2D" parent="." index="2" unique_id=709668539]
+[node name="CollisionPolygon2D" parent="." index="2" unique_id=709668539]
 position = Vector2(-1.8250247, 0.9424743)
 polygon = PackedVector2Array(-8.319684, -40.203335, 30.245806, -28.367579, 45.061794, -0.37619966, 22.677435, 38.972668, -25.736944, 31.900043, -39.639095, 13.696044, -41.43765, -18.920473)

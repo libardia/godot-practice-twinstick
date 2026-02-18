@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d3kqivgtew5f1"]
 
+[ext_resource type="Script" uid="uid://bmxqvp80ndbvv" path="res://addons/commons/nodes/ui_layer.gd" id="1_7nlll"]
 [ext_resource type="Script" uid="uid://6q2pvfruvvdc" path="res://scenes/main/adaptive_cursor.gd" id="1_th5th"]
 [ext_resource type="Texture2D" uid="uid://bla1rtpf2tsdl" path="res://assets/img/ui/crosshair_b.png" id="2_7smn1"]
+[ext_resource type="PackedScene" uid="uid://b2khj7v5q3dtp" path="res://scenes/main/main_ui.tscn" id="2_ii537"]
 [ext_resource type="PackedScene" uid="uid://c7mxj5wcu4oi7" path="res://obj/player/player.tscn" id="3_raeie"]
 [ext_resource type="Script" uid="uid://davqcsxn32c3l" path="res://scripts/nodes/stars.gd" id="5_blune"]
 [ext_resource type="Script" uid="uid://bngwxhmcho6qu" path="res://scripts/nodes/asteroid_spawner.gd" id="5_th5th"]
@@ -58,6 +60,11 @@ choices = Array[Resource]([SubResource("Resource_7nlll"), SubResource("Resource_
 metadata/_custom_type_script = "uid://bxgf51nk6c5at"
 
 [node name="Main" type="Node2D" unique_id=1026637475]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1793852513]
+script = ExtResource("1_7nlll")
+ui_scene = ExtResource("2_ii537")
+metadata/_custom_type_script = "uid://bmxqvp80ndbvv"
 
 [node name="AdaptiveCursor" type="Node" parent="." unique_id=375166096]
 script = ExtResource("1_th5th")
