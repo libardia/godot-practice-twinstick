@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://86tignmrhsg4"]
 
 [ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroid/asteroid.gd" id="1_pcuo8"]
-[ext_resource type="Script" uid="uid://dfliux2w8l2hx" path="res://addons/commons/nodes/extended_collision_polygon_2d.gd" id="2_ix00t"]
-[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://scripts/nodes/components/health_component.gd" id="2_ymtp8"]
+[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://addons/commons/nodes/components/health_component.gd" id="2_ymtp8"]
 
 [node name="Asteroid" type="RigidBody2D" unique_id=1515242791]
 collision_layer = 2
