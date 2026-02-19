@@ -6,9 +6,9 @@
 [node name="AsteroidBB1" unique_id=1515242791 instance=ExtResource("1_khcx7")]
 size = 3
 
-[node name="Sprite" parent="." index="1" unique_id=1041657037]
+[node name="Sprite" parent="." index="2" unique_id=1041657037]
 texture = ExtResource("2_k5kfx")
 
-[node name="CollisionPolygon2D" parent="." index="2" unique_id=709668539]
+[node name="CollisionPolygon2D" parent="." index="3" unique_id=709668539]
 position = Vector2(-1.4024652, -2.3814094)
 polygon = PackedVector2Array(-31.29243, -37.711758, 24.606915, -37.647083, 50.38921, 1.3013074, 35.282166, 34.29745, 11.4408245, 30.965483, -19.776117, 42.48179, -48.27573, 12.105919)

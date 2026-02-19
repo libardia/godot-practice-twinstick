@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bvd2pw6lrw7mn"]
+
+[ext_resource type="StyleBox" uid="uid://b1mbt1pkbld8" path="res://obj/ui/health_bar/health_bar_bg_stylebox.tres" id="1_y85ku"]
+[ext_resource type="Texture2D" uid="uid://dg7trvvv7kth" path="res://assets/img/ui/bar/bar_round_gloss_small_square.png" id="2_y85ku"]
+[ext_resource type="Script" uid="uid://do865dc8chydw" path="res://obj/ui/health_bar/health_bar.gd" id="3_2sao6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y85ku"]
+texture = ExtResource("2_y85ku")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+modulate_color = Color(1, 0, 0, 1)
+
+[node name="HealthBar" type="ProgressBar" unique_id=987133334]
+top_level = true
+custom_minimum_size = Vector2(75, 16)
+offset_right = 35.0
+offset_bottom = 16.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/background = ExtResource("1_y85ku")
+theme_override_styles/fill = SubResource("StyleBoxTexture_y85ku")
+value = 50.0
+show_percentage = false
+script = ExtResource("3_2sao6")
