@@ -5,5 +5,5 @@
 
 [node name="AsteroidTB2" unique_id=1515242791 instance=ExtResource("1_jp2y0")]
 
-[node name="Sprite" parent="." index="2" unique_id=1041657037]
+[node name="Sprite" parent="." index="0" unique_id=1041657037]
 texture = ExtResource("2_ehlbo")
