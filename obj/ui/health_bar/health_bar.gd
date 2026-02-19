@@ -1,5 +1,5 @@
 class_name HealthBar
-extends ProgressBar
+extends TextureProgressBar
 
 
 @export var tracking: HealthComponent

@@ -1,8 +1,0 @@
-[gd_resource type="StyleBoxTexture" format=3 uid="uid://b1mbt1pkbld8"]
-
-[ext_resource type="Texture2D" uid="uid://bo0otdbu46nm2" path="res://assets/img/ui/bar/bar_shadow_round_outline_small_square.png" id="1_k4bg7"]
-
-[resource]
-texture = ExtResource("1_k4bg7")
-texture_margin_left = 8.0
-texture_margin_right = 8.0
