@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroid/asteroid.gd" id="1_pcuo8"]
 [ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://addons/commons/nodes/components/health_component.gd" id="2_ymtp8"]
-[ext_resource type="PackedScene" uid="uid://ckriv5ylycjpr" path="res://obj/ui/health_bar/health_bar.tscn" id="3_ymtp8"]
+[ext_resource type="PackedScene" uid="uid://ckriv5ylycjpr" path="res://obj/ui/health_bar/resource_bar.tscn" id="3_ymtp8"]
 [ext_resource type="Script" uid="uid://d3myxer52vlpk" path="res://obj/enemies/asteroid/asteroid_health_bar.gd" id="4_krrgi"]
 
 [node name="Asteroid" type="RigidBody2D" unique_id=1515242791]

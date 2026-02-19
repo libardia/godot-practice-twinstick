@@ -1,4 +1,4 @@
-class_name HealthBar
+class_name ResourceBar
 extends TextureProgressBar
 
 

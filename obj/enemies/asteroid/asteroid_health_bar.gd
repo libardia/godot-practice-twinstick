@@ -1,4 +1,4 @@
-extends HealthBar
+extends ResourceBar
 
 
 @export var offset: Vector2
