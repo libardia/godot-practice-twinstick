@@ -30,15 +30,14 @@ current_health = 50.0
 max_health = 50.0
 metadata/_custom_type_script = "uid://dhm1qhgql57tp"
 
-[node name="HealthBar" parent="." unique_id=690668854 instance=ExtResource("3_ymtp8")]
+[node name="HealthBar" parent="." unique_id=690668854 node_paths=PackedStringArray("tracking") instance=ExtResource("3_ymtp8")]
 offset_left = -50.0
 offset_top = -8.0
 offset_right = 50.0
 offset_bottom = 8.0
 tint_progress = Color(0, 1, 0, 1)
 script = ExtResource("4_krrgi")
-tracking = null
-hide_when_full = null
 offset = Vector2(0, -10)
+tracking = NodePath("../HealthComponent")
 
 [connection signal="health_depleted" from="HealthComponent" to="." method="die"]
