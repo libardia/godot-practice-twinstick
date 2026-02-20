@@ -22,6 +22,7 @@ split_separation = 10.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
 unique_name_in_owner = true
+polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1892515207]
 unique_name_in_owner = true
