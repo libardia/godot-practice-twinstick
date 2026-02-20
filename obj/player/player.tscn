@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ctlkd0g8044p8" path="res://obj/player/player.gd" id="1_xopso"]
 [ext_resource type="Texture2D" uid="uid://brhaqo7uva4gf" path="res://assets/img/ship/playerShip1_orange.png" id="2_xopso"]
 [ext_resource type="PackedScene" uid="uid://cgo4qtqd6e4e6" path="res://obj/turret/turret.tscn" id="3_rhfbe"]
-[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://addons/commons/nodes/components/health_component.gd" id="4_hle3s"]
+[ext_resource type="Script" uid="uid://bmi4fmd7c8jlt" path="res://addons/commons/nodes/components/resource_component.gd" id="4_hle3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xopso"]
 size = Vector2(27.435, 95.645)
@@ -14,7 +14,7 @@ size = Vector2(30.13, 22.48)
 [sub_resource type="CircleShape2D" id="CircleShape2D_r86bn"]
 radius = 25.8
 
-[node name="Player" type="RigidBody2D" unique_id=24916606]
+[node name="Player" type="RigidBody2D" unique_id=24916606 groups=["has_health"]]
 collision_mask = 10
 mass = 10.0
 center_of_mass_mode = 1
@@ -26,10 +26,12 @@ rotation_lerp_factor = 5.0
 rotation_ease_factor = 0.2
 rotation_aim_by_rotation = true
 
-[node name="HealthComponent" type="Node" parent="." unique_id=564054443]
+[node name="HealthComponent" type="Node" parent="." unique_id=564054443 node_paths=PackedStringArray("belongs_to")]
 unique_name_in_owner = true
 script = ExtResource("4_hle3s")
-metadata/_custom_type_script = "uid://dhm1qhgql57tp"
+current = 100
+max_value = 100
+belongs_to = NodePath("..")
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
 unique_name_in_owner = true

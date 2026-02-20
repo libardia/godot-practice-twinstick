@@ -30,7 +30,7 @@ static var instances: Dictionary = {
 @export_custom(PROPERTY_HINT_NONE, "suffix:°/s") var split_max_angular: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:px") var split_separation: float
 
-@onready var health: HealthComponent = %HealthComponent
+@onready var health: ResourceComponent = %HealthComponent
 
 
 func _enter_tree() -> void:
@@ -38,8 +38,8 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-    health.max_health /= pow(2, 3-size)
-    health.current_health = health.max_health
+    health.max_value *= 2 ** size
+    health.current = health.max_value
 
 
 func die() -> void:

@@ -3,7 +3,7 @@ extends Area2D
 
 
 @export var hit_force: float
-@export var power: float
+@export var power: int
 
 var velocity: Vector2
 var collided_this_frame: bool = false
@@ -28,8 +28,8 @@ func _physics_process(delta: float) -> void:
 func _on_collide(node: Node2D) -> void:
     if not collided_this_frame:
         collided_this_frame = true
-        var health := HealthComponent.get_from(node)
-        if health:
+        if node.is_in_group(&"has_health"):
+            var health: ResourceComponent = node.health
             health.damage(power)
         if node is RigidBody2D:
             node.apply_impulse(

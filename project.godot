@@ -51,6 +51,10 @@ project/assembly_name="Practice Twinstick"
 
 enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/logger/plugin.cfg")
 
+[global_group]
+
+has_health="This node has a ResourceComponent representing its health, which will be exposed as \"health\"."
+
 [input]
 
 "move left"={

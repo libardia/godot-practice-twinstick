@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://86tignmrhsg4"]
 
 [ext_resource type="Script" uid="uid://jd1653hjh5h4" path="res://obj/enemies/asteroid/asteroid.gd" id="1_pcuo8"]
-[ext_resource type="Script" uid="uid://dhm1qhgql57tp" path="res://addons/commons/nodes/components/health_component.gd" id="2_ymtp8"]
+[ext_resource type="Script" uid="uid://bmi4fmd7c8jlt" path="res://addons/commons/nodes/components/resource_component.gd" id="2_krrgi"]
 [ext_resource type="PackedScene" uid="uid://ckriv5ylycjpr" path="res://obj/ui/health_bar/health_bar.tscn" id="3_ymtp8"]
 [ext_resource type="Script" uid="uid://d3myxer52vlpk" path="res://obj/enemies/asteroid/asteroid_health_bar.gd" id="4_krrgi"]
 
-[node name="Asteroid" type="RigidBody2D" unique_id=1515242791]
+[node name="Asteroid" type="RigidBody2D" unique_id=1515242791 groups=["has_health"]]
 collision_layer = 2
 collision_mask = 15
 mass = 10.0
@@ -24,12 +24,15 @@ split_separation = 10.0
 unique_name_in_owner = true
 polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
 
-[node name="HealthComponent" type="Node" parent="." unique_id=1892515207]
+[node name="HealthComponent" type="Node" parent="." unique_id=1611460465 node_paths=PackedStringArray("belongs_to")]
 unique_name_in_owner = true
-script = ExtResource("2_ymtp8")
-current_health = 50.0
-max_health = 50.0
-metadata/_custom_type_script = "uid://dhm1qhgql57tp"
+script = ExtResource("2_krrgi")
+current = 10
+max_value = 10
+when_depleted_lock = true
+when_depleted_free_owner = true
+belongs_to = NodePath("..")
+metadata/_custom_type_script = "uid://bmi4fmd7c8jlt"
 
 [node name="HealthBar" parent="." unique_id=690668854 node_paths=PackedStringArray("tracking") instance=ExtResource("3_ymtp8")]
 offset_left = -50.0
@@ -39,4 +42,4 @@ script = ExtResource("4_krrgi")
 offset = Vector2(0, -10)
 tracking = NodePath("../HealthComponent")
 
-[connection signal="health_depleted" from="HealthComponent" to="." method="die"]
+[connection signal="depleted" from="HealthComponent" to="." method="die"]
