@@ -11,7 +11,6 @@ offset_left = -37.5
 offset_top = -8.0
 offset_right = 37.5
 offset_bottom = 8.0
-scale = Vector2(0.5, 0.5)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 value = 50.0
 nine_patch_stretch = true
