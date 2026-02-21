@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://do2retkpq5vme"]
+[gd_scene format=3 uid="uid://b2umqi03q8wrp"]
 
-[ext_resource type="PackedScene" uid="uid://dd3ldgf6yn87g" path="res://obj/enemies/asteroid/impl/asteroid_mb1.tscn" id="1_bk3pj"]
-[ext_resource type="Texture2D" uid="uid://bk51n83wtgowr" path="res://assets/img/asteroid/meteorGrey_med1.png" id="2_bjvma"]
+[ext_resource type="PackedScene" uid="uid://86tignmrhsg4" path="res://obj/enemies/asteroid/asteroid.tscn" id="1_8semb"]
+[ext_resource type="Texture2D" uid="uid://bk51n83wtgowr" path="res://assets/img/asteroid/meteorGrey_med1.png" id="2_8semb"]
 
-[node name="AsteroidMG1" unique_id=1515242791 instance=ExtResource("1_bk3pj")]
-type = 1
+[node name="AsteroidMG1" unique_id=1515242791 instance=ExtResource("1_8semb")]
+size = 2
 
 [node name="Sprite" parent="." index="0" unique_id=1041657037]
-texture = ExtResource("2_bjvma")
+texture = ExtResource("2_8semb")
+
+[node name="CollisionPolygon2D" parent="." index="1" unique_id=709668539]
+position = Vector2(0.54350084, -1.2096717)
+polygon = PackedVector2Array(-9.578772, -18.75219, 16.22357, -17.273617, 20.078636, 8.208594, -0.1451167, 21.280622, -14.638016, 16.023392, -20.91812, -2.7858784)

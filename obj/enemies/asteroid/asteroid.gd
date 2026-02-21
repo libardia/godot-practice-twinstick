@@ -14,10 +14,10 @@ static var instances: Dictionary = {
         3: RandomResource.with(preload("uid://c61by5jcptx6n"), preload("uid://cv1idgy47h60t"), preload("uid://bplwcrg2x8n1t"), preload("uid://baej8gojx5qnf")),
     },
     Type.GRAY: {
-        0: RandomResource.with(preload("uid://okhev8dn1pgk"), preload("uid://cwqivny4go2tp")),
-        1: RandomResource.with(preload("uid://dslsfuadjq5yp"), preload("uid://bwscdgi62eda2")),
-        2: RandomResource.with(preload("uid://do2retkpq5vme"), preload("uid://bvhiqxrb4j50v")),
-        3: RandomResource.with(preload("uid://bo4jdm4brvaaf"), preload("uid://cnxc4mlp75r2f"), preload("uid://btgwhlyo45rlm"), preload("uid://b1bg4bunqhumj")),
+        0: RandomResource.with(preload("uid://36ud88uu1mpm"), preload("uid://ipxaf4aednip")),
+        1: RandomResource.with(preload("uid://1gnsbdhh8rsn"), preload("uid://cposljxlck1st")),
+        2: RandomResource.with(preload("uid://b2umqi03q8wrp"), preload("uid://bsfn33p8jihxx")),
+        3: RandomResource.with(preload("uid://d3ohyf4q5fmrg"), preload("uid://dv23voiwoyxvm"), preload("uid://wto1p1utdjk4"), preload("uid://dmmykmglqgsej")),
     },
 }
 
