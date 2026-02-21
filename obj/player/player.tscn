@@ -62,5 +62,3 @@ shape = SubResource("RectangleShape2D_hle3s")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=366681931]
 position = Vector2(-11.725002, 0)
 shape = SubResource("CircleShape2D_r86bn")
-
-[connection signal="timeout" from="FireCooldown" to="." method="fire"]

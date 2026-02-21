@@ -24,6 +24,7 @@ var aim_dir: Vector2
 
 func _ready() -> void:
     GlobalData.player = self
+    fire_cooldown.timeout.connect(fire)
     turrets.assign(%Turrets.get_children())
     move_force = acceleration * mass
     drag_coeff = move_force / pow(max_speed, 1)

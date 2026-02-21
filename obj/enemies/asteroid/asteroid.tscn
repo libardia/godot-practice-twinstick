@@ -41,5 +41,3 @@ tint_progress = Color(0, 1, 0, 1)
 script = ExtResource("4_krrgi")
 offset = Vector2(0, -10)
 tracking = NodePath("../HealthComponent")
-
-[connection signal="depleted" from="HealthComponent" to="." method="die"]

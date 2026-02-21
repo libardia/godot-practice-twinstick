@@ -11,6 +11,8 @@ var start_disabled: bool = true
 
 
 func _enter_tree() -> void:
+    area_entered.connect(_on_collide)
+    body_entered.connect(_on_collide)
     if start_disabled:
         visible = false
         monitoring = false

@@ -40,6 +40,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
     health.max_value *= 2 ** size
     health.current = health.max_value
+    health.depleted.connect(die)
 
 
 func die() -> void:

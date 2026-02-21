@@ -1,23 +1,25 @@
 [gd_scene format=3 uid="uid://c3jpn5qdcaode"]
 
 [ext_resource type="Script" uid="uid://cvsu86mtu4wj" path="res://obj/bullet/bullet.gd" id="1_eb0oy"]
+[ext_resource type="Script" uid="uid://cs7nkaq50r46t" path="res://addons/commons/nodes/components/lifetime_component.gd" id="2_eb0oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb0oy"]
+size = Vector2(10, 10)
 
 [node name="Bullet" type="Area2D" unique_id=1726358687]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 11
 script = ExtResource("1_eb0oy")
 hit_force = 1000.0
-power = 10.0
-
-[node name="Lifetime" type="Timer" parent="." unique_id=2007843289]
-wait_time = 10.0
-one_shot = true
-autostart = true
+power = 10
 
 [node name="BulletSprite" type="Sprite2D" parent="." unique_id=1032581405]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209751782]
+shape = SubResource("RectangleShape2D_eb0oy")
 
-[connection signal="area_entered" from="." to="." method="_on_collide"]
-[connection signal="body_entered" from="." to="." method="_on_collide"]
-[connection signal="timeout" from="Lifetime" to="." method="queue_free"]
+[node name="LifetimeComponent" type="Node" parent="." unique_id=1004455169 node_paths=PackedStringArray("belongs_to")]
+script = ExtResource("2_eb0oy")
+lifetime = 10.0
+belongs_to = NodePath("..")
+metadata/_custom_type_script = "uid://cs7nkaq50r46t"
