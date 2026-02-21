@@ -5,6 +5,7 @@
 
 [node name="AsteroidBG1" unique_id=1515242791 instance=ExtResource("1_e8680")]
 size = 3
+type = 1
 
 [node name="Sprite" parent="." index="0" unique_id=1041657037]
 texture = ExtResource("2_e8680")

@@ -5,6 +5,7 @@
 
 [node name="AsteroidSG2" unique_id=1515242791 instance=ExtResource("1_g6p6q")]
 size = 1
+type = 1
 
 [node name="Sprite" parent="." index="0" unique_id=1041657037]
 texture = ExtResource("2_g6p6q")

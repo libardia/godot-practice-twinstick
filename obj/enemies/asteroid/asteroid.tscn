@@ -27,8 +27,8 @@ polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
 [node name="HealthComponent" type="Node" parent="." unique_id=1611460465 node_paths=PackedStringArray("belongs_to")]
 unique_name_in_owner = true
 script = ExtResource("2_krrgi")
-current = 10
-max_value = 10
+current = 100
+max_value = 100
 when_depleted_lock = true
 when_depleted_free_owner = true
 belongs_to = NodePath("..")
