@@ -14,8 +14,8 @@ extends RigidBody2D
 @export var bullet_project_velocity: bool = true
 
 @onready var fire_cooldown: Timer = %FireCooldown
-@onready var turrets: Array[Turret]
 
+var turrets: Array[Turret]
 var move_force: float
 var drag_coeff: float
 var target_angle: float
