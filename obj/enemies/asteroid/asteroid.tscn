@@ -18,12 +18,6 @@ split_min_angular = 5.0
 split_max_angular = 5.0
 split_separation = 10.0
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
-unique_name_in_owner = true
-polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
-
 [node name="HealthComponent" type="Node" parent="." unique_id=1611460465]
 unique_name_in_owner = true
 script = ExtResource("2_krrgi")
@@ -40,3 +34,9 @@ tint_progress = Color(0, 1, 0, 1)
 script = ExtResource("4_krrgi")
 offset = Vector2(0, -10)
 tracking = NodePath("../HealthComponent")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1041657037]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=709668539]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)

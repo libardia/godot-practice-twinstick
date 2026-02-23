@@ -13,12 +13,12 @@ script = ExtResource("1_eb0oy")
 hit_force = 1000.0
 power = 100
 
-[node name="BulletSprite" type="Sprite2D" parent="." unique_id=1032581405]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209751782]
-shape = SubResource("RectangleShape2D_eb0oy")
-
 [node name="LifetimeComponent" type="Node" parent="." unique_id=1004455169]
 script = ExtResource("2_eb0oy")
 lifetime = 10.0
 metadata/_custom_type_script = "uid://cs7nkaq50r46t"
+
+[node name="BulletSprite" type="Sprite2D" parent="." unique_id=1032581405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209751782]
+shape = SubResource("RectangleShape2D_eb0oy")
