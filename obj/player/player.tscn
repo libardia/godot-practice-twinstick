@@ -26,12 +26,10 @@ rotation_lerp_factor = 5.0
 rotation_ease_factor = 0.2
 rotation_aim_by_rotation = true
 
-[node name="HealthComponent" type="Node" parent="." unique_id=564054443 node_paths=PackedStringArray("belongs_to")]
-unique_name_in_owner = true
+[node name="HealthComponent" type="Node" parent="." unique_id=564054443]
 script = ExtResource("4_hle3s")
 current = 100
 max_value = 100
-belongs_to = NodePath("..")
 
 [node name="FireCooldown" type="Timer" parent="." unique_id=1934395190]
 unique_name_in_owner = true

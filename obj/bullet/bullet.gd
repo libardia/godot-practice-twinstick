@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 func _on_collide(node: Node2D) -> void:
     if not collided_this_frame:
         collided_this_frame = true
-        if node.is_in_group(&"has_health"):
-            var health: ResourceComponent = node.health
+        var health: ResourceComponent = node.get_node_or_null(^"HealthComponent")
+        if health:
             health.damage(power)
         if node is RigidBody2D:
             node.apply_impulse(

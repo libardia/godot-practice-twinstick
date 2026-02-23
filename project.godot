@@ -49,7 +49,7 @@ project/assembly_name="Practice Twinstick"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/logger/plugin.cfg")
+enabled=PackedStringArray("res://addons/commons/plugin.cfg", "res://addons/diagnosticlist/plugin.cfg", "res://addons/logger/plugin.cfg")
 
 [global_group]
 
