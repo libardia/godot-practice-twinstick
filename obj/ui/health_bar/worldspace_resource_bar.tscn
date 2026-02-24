@@ -4,4 +4,6 @@
 [ext_resource type="Script" uid="uid://b28cq44tg4ywm" path="res://obj/ui/health_bar/worldspace_resource_bar.gd" id="2_jcv6b"]
 
 [node name="WorldspaceResourceBar" unique_id=690668854 instance=ExtResource("1_3gwjw")]
+top_level = true
 script = ExtResource("2_jcv6b")
+hide_when_full = true

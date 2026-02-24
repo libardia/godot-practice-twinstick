@@ -20,4 +20,4 @@ func _ready() -> void:
     position += offset
 
     # Call the base ready()
-    super._ready()
+    super()

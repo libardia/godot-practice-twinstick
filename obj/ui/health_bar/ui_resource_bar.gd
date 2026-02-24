@@ -3,7 +3,7 @@ extends TextureProgressBar
 
 
 @export var tracking: ResourceComponent
-@export var hide_when_full: bool = true
+@export var hide_when_full: bool = false
 
 
 func _ready() -> void:

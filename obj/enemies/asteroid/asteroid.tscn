@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://bmi4fmd7c8jlt"
 [node name="HealthBar" parent="." unique_id=698500613 node_paths=PackedStringArray("tracking") instance=ExtResource("5_q75ap")]
 offset_right = 100.0
 scale = Vector2(0.5, 0.5)
-tint_progress = Color(0, 1, 0, 1)
+tint_progress = Color(1, 0, 0, 1)
 script = ExtResource("6_ksjkd")
 offset = Vector2(0, -10)
 tracking = NodePath("../HealthComponent")

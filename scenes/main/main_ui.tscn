@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://b2khj7v5q3dtp"]
 
+[ext_resource type="PackedScene" uid="uid://ba0dwfl7mjhee" path="res://obj/ui/health_bar/ui_resource_bar.tscn" id="1_r55yu"]
+[ext_resource type="Script" uid="uid://bmi4fmd7c8jlt" path="res://addons/commons/nodes/components/resource_component.gd" id="2_u282a"]
+
 [node name="MainUI" type="Control" unique_id=210568532]
 layout_mode = 3
 anchors_preset = 15
@@ -8,26 +11,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=1150928394]
-layout_mode = 1
-offset_right = 314.0
-offset_bottom = 23.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "This was made for practice so it sucks lol"
+[node name="ResourceComponent" type="Node" parent="." unique_id=375989662]
+script = ExtResource("2_u282a")
+metadata/_custom_type_script = "uid://bmi4fmd7c8jlt"
 
-[node name="Label2" type="Label" parent="." unique_id=602788452]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=813089280]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -239.0
-offset_top = -23.0
-grow_horizontal = 0
 grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Imagine there are lives here"
-horizontal_alignment = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1345686875]
+layout_mode = 2
+alignment = 2
+
+[node name="UIResourceBar" parent="MarginContainer/VBoxContainer" unique_id=690668854 node_paths=PackedStringArray("tracking") instance=ExtResource("1_r55yu")]
+custom_minimum_size = Vector2(500, 16)
+layout_mode = 2
+tint_progress = Color(0, 1, 0, 1)
+tracking = NodePath("../../../ResourceComponent")
