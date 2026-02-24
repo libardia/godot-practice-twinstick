@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://1w22h32b23xd"]
+
+[ext_resource type="PackedScene" uid="uid://ba0dwfl7mjhee" path="res://obj/ui/health_bar/ui_resource_bar.tscn" id="1_3gwjw"]
+[ext_resource type="Script" uid="uid://b28cq44tg4ywm" path="res://obj/ui/health_bar/worldspace_resource_bar.gd" id="2_jcv6b"]
+
+[node name="WorldspaceResourceBar" unique_id=690668854 instance=ExtResource("1_3gwjw")]
+script = ExtResource("2_jcv6b")

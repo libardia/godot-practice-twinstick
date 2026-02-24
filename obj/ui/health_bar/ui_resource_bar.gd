@@ -1,15 +1,12 @@
-class_name HealthBar
+class_name UIResourceBar
 extends TextureProgressBar
 
 
 @export var tracking: ResourceComponent
 @export var hide_when_full: bool = true
 
-var _init_position: Vector2
-
 
 func _ready() -> void:
-    _init_position = position
     _update()
 
 
@@ -18,7 +15,6 @@ func _process(_delta: float) -> void:
 
 
 func _update() -> void:
-    position = get_parent().global_position + _init_position
     max_value = tracking.max_value
     value = tracking.current
     visible = not (hide_when_full and tracking.is_full())
