@@ -15,6 +15,11 @@ func _process(_delta: float) -> void:
 
 
 func _update() -> void:
-    max_value = tracking.max_value
-    value = tracking.current
-    visible = not (hide_when_full and tracking.is_full())
+    if tracking:
+        max_value = tracking.max_value
+        value = tracking.current
+        visible = not (hide_when_full and tracking.is_full())
+    else:
+        # Always hide if 'tracking' is invalid
+        Log.warn(str("'tracking' property of ", name, " is invalid!"))
+        visible = false

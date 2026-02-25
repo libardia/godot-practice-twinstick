@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b2khj7v5q3dtp"]
 
 [ext_resource type="PackedScene" uid="uid://ba0dwfl7mjhee" path="res://obj/ui/health_bar/ui_resource_bar.tscn" id="1_r55yu"]
-[ext_resource type="Script" uid="uid://bmi4fmd7c8jlt" path="res://addons/commons/nodes/components/resource_component.gd" id="2_u282a"]
 [ext_resource type="Script" uid="uid://dg7teee3go0t0" path="res://scenes/main/ui_player_health.gd" id="3_rljnj"]
 
 [node name="MainUI" type="Control" unique_id=210568532]
@@ -11,10 +10,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ResourceComponent" type="Node" parent="." unique_id=375989662]
-script = ExtResource("2_u282a")
-metadata/_custom_type_script = "uid://bmi4fmd7c8jlt"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=813089280]
 layout_mode = 1
@@ -29,9 +24,8 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 alignment = 2
 
-[node name="UIResourceBar" parent="MarginContainer/VBoxContainer" unique_id=690668854 node_paths=PackedStringArray("tracking") instance=ExtResource("1_r55yu")]
+[node name="UIResourceBar" parent="MarginContainer/VBoxContainer" unique_id=690668854 instance=ExtResource("1_r55yu")]
 custom_minimum_size = Vector2(500, 16)
 layout_mode = 2
 tint_progress = Color(0, 1, 0, 1)
 script = ExtResource("3_rljnj")
-tracking = NodePath("../../../ResourceComponent")
