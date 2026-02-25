@@ -27,6 +27,7 @@ rotation_ease_factor = 0.2
 rotation_aim_by_rotation = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=564054443]
+unique_name_in_owner = true
 script = ExtResource("4_hle3s")
 current = 100
 max_value = 100

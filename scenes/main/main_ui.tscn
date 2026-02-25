@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ba0dwfl7mjhee" path="res://obj/ui/health_bar/ui_resource_bar.tscn" id="1_r55yu"]
 [ext_resource type="Script" uid="uid://bmi4fmd7c8jlt" path="res://addons/commons/nodes/components/resource_component.gd" id="2_u282a"]
+[ext_resource type="Script" uid="uid://dg7teee3go0t0" path="res://scenes/main/ui_player_health.gd" id="3_rljnj"]
 
 [node name="MainUI" type="Control" unique_id=210568532]
 layout_mode = 3
@@ -32,4 +33,5 @@ alignment = 2
 custom_minimum_size = Vector2(500, 16)
 layout_mode = 2
 tint_progress = Color(0, 1, 0, 1)
+script = ExtResource("3_rljnj")
 tracking = NodePath("../../../ResourceComponent")

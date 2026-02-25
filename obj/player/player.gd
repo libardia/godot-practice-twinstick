@@ -14,6 +14,7 @@ extends RigidBody2D
 @export var bullet_project_velocity: bool = true
 
 @onready var fire_cooldown: Timer = %FireCooldown
+@onready var health: ResourceComponent = %HealthComponent
 
 var turrets: Array[Turret]
 var move_force: float
@@ -22,8 +23,11 @@ var target_angle: float
 var aim_dir: Vector2
 
 
-func _ready() -> void:
+func _enter_tree() -> void:
     GlobalData.player = self
+
+
+func _ready() -> void:
     fire_cooldown.timeout.connect(fire)
     turrets.assign(%Turrets.get_children())
     move_force = acceleration * mass

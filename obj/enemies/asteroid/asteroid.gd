@@ -40,10 +40,10 @@ func _enter_tree() -> void:
 func _ready() -> void:
     health.max_value *= 2 ** size
     health.current = health.max_value
-    health.depleted.connect(die)
+    health.depleted.connect(_die)
 
 
-func die() -> void:
+func _die() -> void:
     if size > 0:
         var rand: RandomResource = instances[type][size-1]
         var dir := linear_velocity.normalized().orthogonal()
